@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebStep: Process-Level Evaluation of Web Agents</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="logo-title-container">
+      <img src="static/logo.png" alt="WebStep logo" class="logo-img">
+      <h1 class="title">WebStep</h1>
+    </div>
+    <h2 class="subtitle">Process-Level Evaluation of Web Agents with Semantic State Tracking</h2>
+    <div class="author-block">
+      <span class="author"><a href="https://jiwanchung.github.io/">Jiwan Chung</a><sup>1</sup></span>
+      <span class="author"><a href="https://jihyuk-byun.github.io//">JiHyuk Byun</a><sup>1</sup></span>
+      <span class="author"><a href="https://vibhav-vineet.github.io/">Vibhav Vineet</a><sup>2</sup></span>
+      <span class="author"><a href="https://www.ciplab.kr/members/professor/">Seon Joo Kim</a><sup>1</sup></span>
+    </div>
+    <div class="affiliations">
+      <span><sup>1</sup>Yonsei University</span>&nbsp;&nbsp;
+      <span><sup>2</sup>Microsoft Research</span>
+    </div>
+    <div class="hero-buttons">
+      <a class="btn" href="#"><i class="fas fa-file-pdf"></i> Paper (tbu)</a>
+      <a class="btn" href="#"><i class="fab fa-github"></i> Code (tbu)</a>
+      <a class="btn" href="#"><i class="fas fa-database"></i> Dataset (tbu)</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Method overview -->
+<section class="teaser">
+  <div class="container bit-narrow">
+    <div class="figure-block">
+      <img src="static/figures/fig_method_v2.png" alt="WebStep method overview" class="figure-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="figure-placeholder" style="display:none;">
+        <i class="fas fa-image"></i><span>Method figure</span>
+      </div>
+      <p class="figure-caption">
+        Each website is paired with a semantic MDP that records high-level states and transitions in the background while the agent interacts only with the GUI. This enables automatic process-level analysis without manual annotation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="abstract-section">
+  <div class="container">
+    <h2 class="section-title">Overview</h2>
+    <p class="abstract-lead">
+      We introduce <strong>WebStep</strong>, a benchmark for process-level evaluation of web agents. WebStep contains <strong>1,800 task instances</strong> across 10 self-hosted websites with controlled difficulty, and is designed to move beyond terminal success as the sole measure of performance. Instead of evaluating only whether an agent reaches the correct final outcome, WebStep makes it possible to analyze how agents search, decide, and fail throughout an interaction trajectory.
+    </p>
+    <ul class="abstract-points">
+      <li>
+        Each website is paired with a <strong>deterministic semantic MDP</strong> that automatically records semantic states and transitions alongside the GUI, with no manual annotation.
+      </li>
+      <li>
+        WebStep shows that <strong>process metrics reveal differences invisible to terminal success</strong>, even among agents with similar overall success rates.
+      </li>
+      <li>
+        It enables fine-grained diagnosis of behavior through exploration reach, execution accuracy, skill invocation, and bifurcation analysis.
+      </li>
+      <li>
+        This yields <strong>actionable insight</strong> into where agents fail, why they fail, and how they should be improved.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Interactive Trajectory Viewer -->
+<section class="trajectory-section" id="trajectory-demo">
+  <div class="container">
+    <h2 class="section-title">Automatic Trajectory Analysis</h2>
+    <p class="section-desc">The semantic MDP records states and transitions in the background as the agent interacts with the GUI. Skill labels, coverage, and efficiency are computed from the recorded trajectory with no manual annotation.</p>
+
+    <!-- Trajectory selector -->
+    <div class="trajectory-selector">
+      <button class="traj-tab active" data-traj="airbnb">Housing</button>
+      <button class="traj-tab" data-traj="github">Code Repo</button>
+      <button class="traj-tab" data-traj="gmail">Mail</button>
+    </div>
+
+    <!-- Agent selector -->
+    <div class="agent-selector" id="agent-tabs"></div>
+
+    <!-- Instruction bar -->
+    <div class="instruction-bar">
+      <div class="instruction-label">Task</div>
+      <div class="instruction-text" id="instruction-text"></div>
+      <div class="instruction-meta" id="instruction-meta"></div>
+    </div>
+
+    <!-- Three-row timeline (Agent sees / Agent does / MDP records) -->
+    <div class="three-row-wrapper">
+      <div id="three-row-timeline"></div>
+    </div>
+
+    <!-- Detail panel (screenshot zoom + state) -->
+    <div class="detail-panel-area" id="detail-panel">
+      <div class="state-placeholder">Click any column to inspect state and screenshot</div>
+    </div>
+
+    <!-- Metrics panel (Exploration / Skill Accuracy / Efficiency) -->
+    <div class="metrics-panel" id="metrics-panel">
+      <div class="metrics-grid" id="metrics-grid"></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Benchmark overview -->
+<section class="benchmark-section">
+  <div class="container">
+    <h2 class="section-title">Benchmark Overview</h2>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Websites</div></div>
+      <div class="stat-card"><div class="stat-number">1,800</div><div class="stat-label">Task Instances</div></div>
+      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Skill Categories</div></div>
+      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Agents Evaluated</div></div>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-card"><i class="fas fa-envelope"></i><span>Mail</span></div>
+      <div class="domain-card"><i class="fas fa-calendar"></i><span>Calendar</span></div>
+      <div class="domain-card"><i class="fas fa-shopping-cart"></i><span>Shopping</span></div>
+      <div class="domain-card"><i class="fas fa-home"></i><span>Accommodation</span></div>
+      <div class="domain-card"><i class="fas fa-utensils"></i><span>Food Delivery</span></div>
+      <div class="domain-card"><i class="fas fa-building"></i><span>Housing</span></div>
+      <div class="domain-card"><i class="fas fa-code"></i><span>Coding QA</span></div>
+      <div class="domain-card"><i class="fas fa-code-branch"></i><span>Code Repo</span></div>
+      <div class="domain-card"><i class="fas fa-briefcase"></i><span>Job Network</span></div>
+      <div class="domain-card"><i class="fas fa-comments"></i><span>Team Chat</span></div>
+    </div>
+    <div class="figure-block">
+      <img src="static/figures/task_sunburst.png" alt="Task distribution across domains" class="figure-img" style="max-width:900px;" onerror="this.style.display='none';">
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Leaderboard -->
+<section class="leaderboard-section">
+  <div class="container">
+    <h2 class="section-title">Leaderboard</h2>
+    <table class="leaderboard">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th class="col-highlight">Terminal (%)</th>
+          <th>Exploration (%)</th>
+          <th>Execution (%)</th>
+          <th>Coverage (%)</th>
+          <th>GUI Steps</th>
+          <th>Semantic Steps</th>
+          <th>GUI/Semantic</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OpenAI CUA</td>
+          <td class="col-highlight"><strong>82.2</strong></td>
+          <td><strong>87.7</strong></td>
+          <td><strong>86.2</strong></td>
+          <td><strong>71.0</strong></td>
+          <td>19.7</td>
+          <td>10.0</td>
+          <td><strong>2.0</strong></td>
+        </tr>
+        <tr>
+          <td>Qwen3.5-122B</td>
+          <td class="col-highlight">57.9</td>
+          <td>66.1</td>
+          <td>73.7</td>
+          <td>67.7</td>
+          <td>22.1</td>
+          <td>9.8</td>
+          <td>2.3</td>
+        </tr>
+        <tr>
+          <td>UI-TARS-1.5-7B</td>
+          <td class="col-highlight">32.6</td>
+          <td>46.3</td>
+          <td>50.6</td>
+          <td>62.6</td>
+          <td>35.0</td>
+          <td>14.0</td>
+          <td>2.5</td>
+        </tr>
+        <tr>
+          <td>GUI-Owl-1.5-8B</td>
+          <td class="col-highlight">31.9</td>
+          <td>43.6</td>
+          <td>55.6</td>
+          <td>61.9</td>
+          <td>28.3</td>
+          <td>10.4</td>
+          <td>2.7</td>
+        </tr>
+        <tr>
+          <td>Fara-7B</td>
+          <td class="col-highlight">31.4</td>
+          <td>43.6</td>
+          <td>55.7</td>
+          <td>60.6</td>
+          <td>18.9</td>
+          <td>8.3</td>
+          <td>2.3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table-caption">Terminal success alongside process-level metrics from semantic MDP traces. Process metrics reveal behavioral differences not visible from terminal success alone.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Key Results -->
+<section class="results-section">
+  <div class="container">
+    <h2 class="section-title">Key Findings</h2>
+    <div class="finding-grid">
+      <div class="finding-card" data-finding="0">
+        <div class="finding-number">1</div>
+        <h3>Same score, different behavior</h3>
+        <p>Agents at 31-33% success diverge in exploration vs. execution accuracy.</p>
+      </div>
+      <div class="finding-card" data-finding="1">
+        <div class="finding-number">2</div>
+        <h3>Skill-specific weaknesses</h3>
+        <p>OpenAI CUA beats Qwen3.5 by 23.7% on commits but trails by 15.6% on filtering, within the same domain.</p>
+      </div>
+      <div class="finding-card" data-finding="2">
+        <div class="finding-number">3</div>
+        <h3>Agent-specific decisive errors</h3>
+        <p>GUI-Owl diverges at filtering; Qwen3.5 at inspection.</p>
+      </div>
+      <div class="finding-card" data-finding="3">
+        <div class="finding-number">4</div>
+        <h3>Gaps widen with difficulty</h3>
+        <p>Similar on easy tasks, sharply different as complexity grows.</p>
+      </div>
+    </div>
+    <div class="finding-detail" id="finding-detail">
+      <div class="finding-detail-content" data-finding="0">
+        <img src="static/figures/figure1.png" alt="Terminal outcome hides different failures" class="figure-img" onerror="this.style.display='none';">
+        <p class="figure-caption">Terminal outcome alone cannot distinguish qualitatively different failures. Two agents both fail the same task, but for entirely different reasons: one fails to locate the target, the other reaches it but executes the wrong action.</p>
+      </div>
+      <div class="finding-detail-content" data-finding="1" style="display:none;">
+        <img src="static/figures/fig_model_strengths_v2.png" alt="Skill-level strengths and weaknesses" class="figure-img" onerror="this.style.display='none';">
+        <p class="figure-caption">Agents exhibit distinct within-website skill profiles. e.g., on Housing, OpenAI CUA is stronger on commit but weaker on filter, showing that weakness can be concentrated in a specific interaction skill.</p>
+      </div>
+      <div class="finding-detail-content" data-finding="2" style="display:none;">
+        <img src="static/figures/fig_failure_attribution_v2.png" alt="Bifurcation analysis" class="figure-img" onerror="this.style.display='none';">
+        <p class="figure-caption">Bifurcation analysis localizes where failure is introduced. (a) Wrong branch: the decision that first sends the failing trajectory off course. (b) Delayed commit: extra behavior after missing the right time to finish. (c) Premature commit: missing behavior skipped before finishing too early.</p>
+      </div>
+      <div class="finding-detail-content" data-finding="3" style="display:none;">
+        <img src="static/figures/fig_complexity.png" alt="Performance vs. complexity" class="figure-img" onerror="this.style.display='none';">
+        <p class="figure-caption">Exploration success by task complexity. (a) Performance by hard negative count separates OpenAI CUA from others. (b) Oracle trajectory length shows downward trend. (c) Tasks requiring detail-page evidence show different model gaps from list-level tasks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- BibTeX -->
+<section class="bibtex-section">
+  <div class="container">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-block">
+      <button class="copy-btn" onclick="copyBibtex()" title="Copy to clipboard"><i class="fas fa-copy"></i></button>
+      <pre id="bibtex-text">@article{webstep2026,
+  title={Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking},
+  author={TBD},
+  journal={arXiv preprint},
+  year={2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Template adapted from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>.</p>
+  </div>
+</footer>
+
+<script src="trajectory-viewer.js"></script>
+<script>
+// Finding cards
+document.querySelectorAll('.finding-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const idx = card.dataset.finding;
+    document.querySelectorAll('.finding-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.finding-detail-content').forEach(p => p.style.display = 'none');
+    card.classList.add('active');
+    document.querySelector(`.finding-detail-content[data-finding="${idx}"]`).style.display = '';
+  });
+});
+document.querySelector('.finding-card').classList.add('active');
+
+function copyBibtex() {
+  const text = document.getElementById('bibtex-text').textContent;
+  navigator.clipboard.writeText(text);
+  const btn = document.querySelector('.copy-btn');
+  btn.innerHTML = '<i class="fas fa-check"></i>';
+  setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+}
+</script>
+</body>
+</html>

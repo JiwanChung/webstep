@@ -1,0 +1,2736 @@
+{
+  "task_id": "gmail_0001",
+  "agent": "guiowl",
+  "site": "gmail",
+  "instruction": "Priya Patel has sent you several similar emails. Find the one that mentions \"ProjectAlpha006\" in its body and star it.",
+  "template": "find_email_extract",
+  "difficulty": "easy",
+  "outcome": "failure",
+  "mdp_trajectory": [],
+  "mdp_state_final": {
+    "surface": "ThreadList",
+    "surface_params": {
+      "active_folder": "INBOX"
+    },
+    "modal_state": null,
+    "back_stack": [],
+    "active_folder": "INBOX",
+    "search_query": null,
+    "filters": {},
+    "sort_by": "date_desc",
+    "page": 0,
+    "visible_ids": [
+      "THR-026",
+      "THR-012",
+      "THR-019",
+      "THR-014",
+      "THR-058",
+      "THR-053",
+      "THR-022",
+      "THR-035",
+      "THR-040",
+      "THR-059",
+      "THR-050",
+      "THR-047",
+      "THR-032",
+      "THR-030",
+      "THR-024",
+      "THR-043",
+      "THR-008",
+      "THR-051",
+      "THR-038",
+      "THR-006",
+      "THR-031",
+      "THR-060",
+      "THR-002",
+      "THR-042",
+      "THR-018",
+      "THR-005",
+      "THR-013",
+      "THR-063",
+      "THR-054",
+      "THR-048",
+      "THR-052",
+      "THR-021",
+      "THR-057",
+      "THR-041",
+      "THR-055",
+      "THR-007",
+      "THR-025",
+      "THR-010",
+      "THR-062",
+      "THR-027",
+      "THR-061",
+      "THR-001",
+      "THR-029",
+      "THR-056",
+      "THR-039",
+      "THR-033",
+      "THR-017",
+      "THR-049",
+      "THR-034",
+      "THR-004"
+    ],
+    "total_results": 50,
+    "selected_thread_ids": [],
+    "compose_to": [],
+    "compose_cc": [],
+    "compose_bcc": [],
+    "compose_subject": null,
+    "compose_body": null,
+    "compose_attachments": [],
+    "compose_mode": null,
+    "compose_reply_thread_id": null,
+    "opened_threads": [],
+    "expanded_messages": [],
+    "error_message": null,
+    "thread": {
+      "THR-001": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-002": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-003": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-004": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-005": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-006": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-007": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-008": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-009": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-010": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-011": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-012": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-013": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-014": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-015": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-016": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-017": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-018": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-019": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-020": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-021": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-022": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-023": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-024": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-025": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-026": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-027": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-028": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-029": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-030": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-031": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-032": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-033": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-034": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-035": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-036": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "TRASH"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-037": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "SENT",
+          "STARRED",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-038": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 1
+      },
+      "THR-039": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-040": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-041": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-042": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-043": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 1
+      },
+      "THR-044": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-045": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-046": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-047": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-048": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-049": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-050": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-051": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-052": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-053": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-054": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-055": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-056": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-057": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-058": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-059": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-060": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-061": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-062": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-063": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-064": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "DRAFTS",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-065": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-066": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT",
+          "TRASH"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      }
+    }
+  },
+  "init_state": {
+    "surface": "ThreadList",
+    "active_folder": "INBOX",
+    "search_query": null,
+    "filters": {},
+    "page": 0,
+    "selected_thread_ids": [],
+    "compose_mode": null
+  },
+  "oracle_trajectory": [
+    {
+      "type": "SearchEmails",
+      "payload": {
+        "query": "Priya Patel"
+      }
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-019"
+      }
+    },
+    {
+      "type": "CloseThread",
+      "payload": {}
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-050"
+      }
+    },
+    {
+      "type": "CloseThread",
+      "payload": {}
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-006"
+      }
+    },
+    {
+      "type": "Star",
+      "payload": {
+        "thread_id": "THR-006"
+      }
+    }
+  ],
+  "process_metrics": {
+    "outcome_correct": false,
+    "info_sufficient": false,
+    "pasr": false,
+    "pcr": false,
+    "failure_mode": "explorer_failure",
+    "constraints": [
+      "Must inspect body (detail page required)",
+      "Must inspect cc (detail page required)",
+      "Must inspect attachments (detail page required)",
+      "Must see target's subject at card level",
+      "Must see target's from_name at card level"
+    ],
+    "constraint_count": 5,
+    "coverage_at_commit": 0.4,
+    "coverage_trajectory": [
+      0.4
+    ],
+    "commit_step": 0,
+    "info_completion_time": null,
+    "commit_lag": null,
+    "total_steps": 1,
+    "visited_entities": [],
+    "visited_entities_at_commit": [],
+    "task_id": "gmail_0001",
+    "template": "find_email_extract",
+    "difficulty": "easy",
+    "scan": {
+      "has_detail_gap": true,
+      "hard_negative_count": 2,
+      "candidate_count": 3,
+      "target_scan_rank": 3,
+      "detail_gap_fields": [
+        "body",
+        "cc",
+        "attachments"
+      ]
+    }
+  },
+  "skill_labels": [
+    {
+      "step": 1,
+      "action": "done",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "waste",
+          "family": "waste",
+          "score": 0.0,
+          "detail": "unproductive action: done"
+        }
+      ]
+    }
+  ],
+  "turns": [
+    {
+      "step": 0,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down in the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 1,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 2,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 3,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 4,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 5,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 6,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 7,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 8,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 9,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 10,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 11,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 12,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 13,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 14,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 15,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 16,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 17,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 18,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 19,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 20,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 21,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 22,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 23,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 24,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 25,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 26,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 27,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 28,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 29,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 30,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 31,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 32,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 33,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 34,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 35,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 36,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 37,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 38,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 39,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 40,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 41,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 42,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 43,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 44,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 45,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 46,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 47,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 48,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    },
+    {
+      "step": 49,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "Scroll down the Gmail inbox to view more emails and locate the one from Priya Patel mentioning \"ProjectAlpha006\" in its body.",
+      "final_response": null
+    }
+  ],
+  "judge": {
+    "agent_output": {},
+    "local_storage": [
+      {
+        "path": "thread.THR-006.starred",
+        "equals": true,
+        "description": "thread.THR-006.starred should be true"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2553 @@
+{
+  "task_id": "gmail_0001",
+  "agent": "qwen_vl",
+  "site": "gmail",
+  "instruction": "Priya Patel has sent you several similar emails. Find the one that mentions \"ProjectAlpha006\" in its body and star it.",
+  "template": "find_email_extract",
+  "difficulty": "easy",
+  "outcome": "success",
+  "mdp_trajectory": [
+    {
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "timestamp": "2026-03-27T14:49:39.591Z"
+    },
+    {
+      "action": "ClearSearch",
+      "payload": {},
+      "timestamp": "2026-03-27T14:49:41.925Z"
+    },
+    {
+      "action": "OpenThread",
+      "payload": {
+        "thread_id": "THR-006"
+      },
+      "timestamp": "2026-03-27T14:49:55.190Z"
+    },
+    {
+      "action": "CloseThread",
+      "payload": {},
+      "timestamp": "2026-03-27T14:49:57.619Z"
+    },
+    {
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "timestamp": "2026-03-27T14:50:06.620Z"
+    },
+    {
+      "action": "ClearSearch",
+      "payload": {},
+      "timestamp": "2026-03-27T14:50:13.470Z"
+    },
+    {
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "timestamp": "2026-03-27T14:50:26.284Z"
+    },
+    {
+      "action": "SwitchFolder",
+      "payload": {
+        "folder": "ALL_MAIL"
+      },
+      "timestamp": "2026-03-27T14:50:28.768Z"
+    },
+    {
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "timestamp": "2026-03-27T14:50:41.702Z"
+    },
+    {
+      "action": "ClearSearch",
+      "payload": {},
+      "timestamp": "2026-03-27T14:50:49.551Z"
+    },
+    {
+      "action": "SearchEmails",
+      "payload": {
+        "query": "ProjectAlpha006"
+      },
+      "timestamp": "2026-03-27T14:51:02.617Z"
+    },
+    {
+      "action": "Star",
+      "payload": {
+        "thread_id": "THR-006"
+      },
+      "timestamp": "2026-03-27T14:51:05.417Z"
+    }
+  ],
+  "mdp_state_final": {
+    "surface": "ThreadList",
+    "surface_params": {
+      "active_folder": "ALL_MAIL"
+    },
+    "modal_state": null,
+    "back_stack": [],
+    "active_folder": "ALL_MAIL",
+    "search_query": "ProjectAlpha006",
+    "filters": {},
+    "sort_by": "date_desc",
+    "page": 0,
+    "visible_ids": [
+      "THR-006"
+    ],
+    "total_results": 1,
+    "selected_thread_ids": [],
+    "compose_to": [],
+    "compose_cc": [],
+    "compose_bcc": [],
+    "compose_subject": null,
+    "compose_body": null,
+    "compose_attachments": [],
+    "compose_mode": null,
+    "compose_reply_thread_id": null,
+    "opened_threads": [
+      "THR-006"
+    ],
+    "expanded_messages": [],
+    "error_message": null,
+    "thread": {
+      "THR-001": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-002": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-003": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-004": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-005": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-006": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-007": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-008": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-009": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-010": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-011": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-012": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-013": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-014": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-015": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-016": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT",
+          "LBL-WORK"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-017": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-018": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-019": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-020": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-021": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-022": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-023": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "SENT",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-024": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-025": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-026": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-027": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-028": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS",
+          "LBL-WORK"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-029": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-030": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-031": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-032": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-033": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-034": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-035": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-036": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "TRASH"
+        ],
+        "has_attachment": true,
+        "message_count": 3
+      },
+      "THR-037": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "SENT",
+          "STARRED",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-038": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 1
+      },
+      "THR-039": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-040": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-041": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-042": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-043": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 1
+      },
+      "THR-044": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-045": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-046": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-047": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 5
+      },
+      "THR-048": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 4
+      },
+      "THR-049": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-050": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-051": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "SENT",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-052": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-053": {
+        "starred": true,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-054": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "INBOX",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 4
+      },
+      "THR-055": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-056": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-NEWSLETTERS"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-057": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 5
+      },
+      "THR-058": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-TRAVEL"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-059": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": true,
+        "message_count": 2
+      },
+      "THR-060": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-061": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-062": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX",
+          "LBL-IMPORTANT"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-063": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "INBOX"
+        ],
+        "has_attachment": false,
+        "message_count": 3
+      },
+      "THR-064": {
+        "starred": true,
+        "read": false,
+        "labels": [
+          "DRAFTS",
+          "STARRED"
+        ],
+        "has_attachment": false,
+        "message_count": 2
+      },
+      "THR-065": {
+        "starred": false,
+        "read": true,
+        "labels": [
+          "DRAFTS"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      },
+      "THR-066": {
+        "starred": false,
+        "read": false,
+        "labels": [
+          "SENT",
+          "TRASH"
+        ],
+        "has_attachment": false,
+        "message_count": 1
+      }
+    }
+  },
+  "init_state": {
+    "surface": "ThreadList",
+    "active_folder": "INBOX",
+    "search_query": null,
+    "filters": {},
+    "page": 0,
+    "selected_thread_ids": [],
+    "compose_mode": null
+  },
+  "oracle_trajectory": [
+    {
+      "type": "SearchEmails",
+      "payload": {
+        "query": "Priya Patel"
+      }
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-019"
+      }
+    },
+    {
+      "type": "CloseThread",
+      "payload": {}
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-050"
+      }
+    },
+    {
+      "type": "CloseThread",
+      "payload": {}
+    },
+    {
+      "type": "OpenThread",
+      "payload": {
+        "thread_id": "THR-006"
+      }
+    },
+    {
+      "type": "Star",
+      "payload": {
+        "thread_id": "THR-006"
+      }
+    }
+  ],
+  "process_metrics": {
+    "outcome_correct": true,
+    "info_sufficient": true,
+    "pasr": true,
+    "pcr": false,
+    "failure_mode": "valid_success",
+    "constraints": [
+      "Must inspect body (detail page required)",
+      "Must inspect cc (detail page required)",
+      "Must inspect attachments (detail page required)",
+      "Must see target's subject at card level",
+      "Must see target's from_name at card level"
+    ],
+    "constraint_count": 5,
+    "coverage_at_commit": 1.0,
+    "coverage_trajectory": [
+      0.4,
+      0.4,
+      0.4,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "commit_step": 11,
+    "info_completion_time": 3,
+    "commit_lag": 8,
+    "total_steps": 13,
+    "visited_entities": [
+      "THR-006"
+    ],
+    "visited_entities_at_commit": [
+      "THR-006"
+    ],
+    "task_id": "gmail_0001",
+    "template": "find_email_extract",
+    "difficulty": "easy",
+    "scan": {
+      "has_detail_gap": true,
+      "hard_negative_count": 2,
+      "candidate_count": 3,
+      "target_scan_rank": 3,
+      "detail_gap_fields": [
+        "body",
+        "cc",
+        "attachments"
+      ]
+    }
+  },
+  "skill_labels": [
+    {
+      "step": 1,
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "skills": [
+        {
+          "skill": "search_refinement",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "-> 0 results"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "ClearSearch",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "backtrack_navigation",
+          "family": "navigation",
+          "score": 1.0,
+          "detail": "search cleared/changed"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "action": "OpenThread",
+      "payload": {
+        "thread_id": "THR-006"
+      },
+      "skills": [
+        {
+          "skill": "thread_inspection",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "2 new fields"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "action": "CloseThread",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "backtrack_navigation",
+          "family": "navigation",
+          "score": 1.0,
+          "detail": "ThreadView -> ThreadList"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "skills": [
+        {
+          "skill": "search_refinement",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "-> 0 results"
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "action": "ClearSearch",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "backtrack_navigation",
+          "family": "navigation",
+          "score": 1.0,
+          "detail": "search cleared/changed"
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "skills": [
+        {
+          "skill": "search_refinement",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "-> 0 results"
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "action": "SwitchFolder",
+      "payload": {
+        "folder": "ALL_MAIL"
+      },
+      "skills": [
+        {
+          "skill": "folder_navigation",
+          "family": "configuration",
+          "score": 1.0,
+          "detail": "folder: INBOX -> ALL_MAIL"
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "action": "SearchEmails",
+      "payload": {
+        "query": "from:Priya Patel ProjectAlpha006"
+      },
+      "skills": [
+        {
+          "skill": "search_refinement",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "-> 0 results"
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "action": "ClearSearch",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "backtrack_navigation",
+          "family": "navigation",
+          "score": 1.0,
+          "detail": "search cleared/changed"
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "action": "SearchEmails",
+      "payload": {
+        "query": "ProjectAlpha006"
+      },
+      "skills": [
+        {
+          "skill": "search_refinement",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "-> 0 results"
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "action": "Star",
+      "payload": {
+        "thread_id": "THR-006"
+      },
+      "skills": [
+        {
+          "skill": "email_management",
+          "family": "commit",
+          "score": 1.0,
+          "detail": "coverage: 1.00"
+        }
+      ]
+    },
+    {
+      "step": 13,
+      "action": "done",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "waste",
+          "family": "waste",
+          "score": 0.0,
+          "detail": "unproductive action: done"
+        }
+      ]
+    }
+  ],
+  "turns": [
+    {
+      "step": 0,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 1,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "from:Priya Patel ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 2,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          963.36,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 3,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          931.6800000000001,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 4,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -500.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 5,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -800.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 6,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1000.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 7,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          354.24,
+          888.3
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 8,
+      "surface": "ThreadView",
+      "state": {
+        "surface": "ThreadView",
+        "surface_params": {
+          "thread_id": "THR-006"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "ThreadList",
+            "surface_params": {
+              "active_folder": "INBOX"
+            }
+          }
+        ],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [
+          "MSG-00017"
+        ],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          298.08,
+          95.39999999999999
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 9,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 10,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "from:Priya Patel ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 11,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          963.36,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 12,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 13,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 14,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          931.6800000000001,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 15,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -800.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 16,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1000.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 17,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 18,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "from:Priya Patel ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 19,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          963.36,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 20,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          126.72,
+          345.6
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 21,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[64 items]",
+        "total_results": 64,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1000.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 22,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[64 items]",
+        "total_results": 64,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1500.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 23,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[64 items]",
+        "total_results": 64,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 24,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[64 items]",
+        "total_results": 64,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "from:Priya Patel ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 25,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[64 items]",
+        "total_results": 64,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          963.36,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 26,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 27,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 28,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "from:Priya Patel ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [],
+        "total_results": 0,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": "No results for your search",
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          931.6800000000001,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 29,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1000.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 30,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "scroll",
+        "pixels": -1500.0
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 31,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          629.28,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 32,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "type",
+        "text": "ProjectAlpha006",
+        "press_enter": false
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 33,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "INBOX"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "INBOX",
+        "search_query": null,
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": "[50 items]",
+        "total_results": 50,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          963.36,
+          31.500000000000004
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 34,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [
+          "THR-006"
+        ],
+        "total_results": 1,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          306.71999999999997,
+          132.29999999999998
+        ]
+      },
+      "message": "",
+      "final_response": null
+    },
+    {
+      "step": 35,
+      "surface": "ThreadList",
+      "state": {
+        "surface": "ThreadList",
+        "surface_params": {
+          "active_folder": "ALL_MAIL"
+        },
+        "modal_state": null,
+        "back_stack": [],
+        "active_folder": "ALL_MAIL",
+        "search_query": "ProjectAlpha006",
+        "filters": {},
+        "sort_by": "date_desc",
+        "page": 0,
+        "visible_ids": [
+          "THR-006"
+        ],
+        "total_results": 1,
+        "selected_thread_ids": [],
+        "compose_to": [],
+        "compose_cc": [],
+        "compose_bcc": [],
+        "compose_subject": null,
+        "compose_body": null,
+        "compose_attachments": [],
+        "compose_mode": null,
+        "compose_reply_thread_id": null,
+        "opened_threads": [
+          "THR-006"
+        ],
+        "expanded_messages": [],
+        "error_message": null,
+        "thread": "{66 keys}"
+      },
+      "action": null,
+      "message": "",
+      "final_response": "I found the email from Priya Patel mentioning \"ProjectAlpha006\" in its body and successfully starred it. The email with subject \"FYI: Flight confirmation - Update 3\" is now marked with a yellow star in the search results."
+    }
+  ],
+  "judge": {
+    "agent_output": {},
+    "local_storage": [
+      {
+        "path": "thread.THR-006.starred",
+        "equals": true,
+        "description": "thread.THR-006.starred should be true"
+      }
+    ]
+  }
+}

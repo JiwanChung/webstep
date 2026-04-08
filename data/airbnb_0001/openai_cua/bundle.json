@@ -1,0 +1,1245 @@
+{
+  "task_id": "airbnb_0001",
+  "agent": "openai_cua",
+  "site": "airbnb",
+  "instruction": "Book the cheapest condo in Seattle that has a Pool for 3 guests, April 14-17.",
+  "template": "search_filter_book",
+  "difficulty": "easy",
+  "outcome": "success",
+  "mdp_trajectory": [
+    {
+      "action": "Search",
+      "payload": {
+        "query": "Seattle"
+      },
+      "timestamp": "2026-03-24T02:38:18.207Z"
+    },
+    {
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      },
+      "timestamp": "2026-03-24T02:38:25.822Z"
+    },
+    {
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      },
+      "timestamp": "2026-03-24T02:38:25.823Z"
+    },
+    {
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "timestamp": "2026-03-24T02:38:26.256Z"
+    },
+    {
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "timestamp": "2026-03-24T02:38:26.257Z"
+    },
+    {
+      "action": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      },
+      "timestamp": "2026-03-24T02:38:31.705Z"
+    },
+    {
+      "action": "SetBookingField",
+      "payload": {
+        "field": "check_in",
+        "value": "2026-04-14"
+      },
+      "timestamp": "2026-03-24T02:38:44.854Z"
+    },
+    {
+      "action": "SetBookingField",
+      "payload": {
+        "field": "check_out",
+        "value": "2026-04-17"
+      },
+      "timestamp": "2026-03-24T02:38:55.970Z"
+    },
+    {
+      "action": "BookListing",
+      "payload": {
+        "check_in": "2026-04-14",
+        "check_out": "2026-04-17",
+        "guests": "3"
+      },
+      "timestamp": "2026-03-24T02:39:16.470Z"
+    },
+    {
+      "action": "ConfirmBooking",
+      "payload": {},
+      "timestamp": "2026-03-24T02:39:25.318Z"
+    }
+  ],
+  "mdp_state_final": {
+    "surface": "Reservations",
+    "surface_params": {},
+    "modal_state": null,
+    "back_stack": [],
+    "search_query": "Seattle",
+    "filters": {
+      "property_type": [
+        "Condo"
+      ],
+      "amenities": [
+        "Pool"
+      ]
+    },
+    "sort_by": "relevance",
+    "page": 0,
+    "visible_ids": [
+      "LST-005"
+    ],
+    "total_results": 1,
+    "booking_check_in": null,
+    "booking_check_out": null,
+    "booking_guests": null,
+    "booking_listing_id": null,
+    "reservations": [
+      {
+        "reservation_id": "RES-001",
+        "listing_id": "LST-005",
+        "listing_title": "Vibrant Loft in Capitol Hill",
+        "listing_location": "Seattle, Washington",
+        "check_in": "2026-04-14",
+        "check_out": "2026-04-17",
+        "guests": 3,
+        "total_price": 1768,
+        "status": "confirmed",
+        "booked_at": "2026-03-24T02:39:25.318Z"
+      }
+    ],
+    "viewed_listings": [
+      "LST-005"
+    ],
+    "error_message": null
+  },
+  "init_state": {
+    "surface": "SearchResults",
+    "search_query": null,
+    "filters": {},
+    "sort_by": "relevance",
+    "page": 0,
+    "reservations": [],
+    "viewed_listings": []
+  },
+  "oracle_trajectory": [
+    {
+      "type": "Search",
+      "payload": {
+        "query": "seattle"
+      }
+    },
+    {
+      "type": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      }
+    },
+    {
+      "type": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      }
+    },
+    {
+      "type": "SortBy",
+      "payload": {
+        "sort_field": "price_asc"
+      }
+    },
+    {
+      "type": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      }
+    },
+    {
+      "type": "BookListing",
+      "payload": {
+        "check_in": "2026-04-14",
+        "check_out": "2026-04-17",
+        "guests": 3
+      }
+    },
+    {
+      "type": "ConfirmBooking",
+      "payload": {}
+    }
+  ],
+  "process_metrics": {
+    "outcome_correct": true,
+    "info_sufficient": true,
+    "pasr": true,
+    "pcr": false,
+    "failure_mode": "valid_success",
+    "constraints": [
+      "Must see target's title at card level",
+      "Must see target's price_per_night at card level"
+    ],
+    "constraint_count": 2,
+    "coverage_at_commit": 1.0,
+    "coverage_trajectory": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "commit_step": 9,
+    "info_completion_time": 0,
+    "commit_lag": 9,
+    "total_steps": 11,
+    "visited_entities": [
+      "LST-005"
+    ],
+    "visited_entities_at_commit": [
+      "LST-005"
+    ],
+    "task_id": "airbnb_0001",
+    "template": "search_filter_book",
+    "difficulty": "easy",
+    "scan": {
+      "has_detail_gap": false,
+      "hard_negative_count": 0,
+      "candidate_count": 1,
+      "target_scan_rank": null,
+      "detail_gap_fields": []
+    }
+  },
+  "skill_labels": [
+    {
+      "step": 1,
+      "action": "Search",
+      "payload": {
+        "query": "Seattle"
+      },
+      "skills": [
+        {
+          "skill": "query_formulation",
+          "family": "configuration",
+          "score": 1.0,
+          "detail": "results: 18 -> 6"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "property_type_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "property_type_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "amenity_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "amenity_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "action": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      },
+      "skills": [
+        {
+          "skill": "listing_inspection",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "27 new fields"
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "action": "SetBookingField",
+      "payload": {
+        "field": "check_in",
+        "value": "2026-04-14"
+      },
+      "skills": [
+        {
+          "skill": "waste",
+          "family": "waste",
+          "score": 0.0,
+          "detail": "unproductive action: SetBookingField"
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "action": "SetBookingField",
+      "payload": {
+        "field": "check_out",
+        "value": "2026-04-17"
+      },
+      "skills": [
+        {
+          "skill": "waste",
+          "family": "waste",
+          "score": 0.0,
+          "detail": "unproductive action: SetBookingField"
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "action": "BookListing",
+      "payload": {
+        "check_in": "2026-04-14",
+        "check_out": "2026-04-17",
+        "guests": "3"
+      },
+      "skills": [
+        {
+          "skill": "booking_initiation",
+          "family": "commit",
+          "score": 1.0,
+          "detail": "ListingDetail -> Checkout"
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "action": "ConfirmBooking",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "booking_confirmation",
+          "family": "commit",
+          "score": 1.0,
+          "detail": "coverage: 1.00"
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "action": "done",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "waste",
+          "family": "waste",
+          "score": 0.0,
+          "detail": "unproductive action: done"
+        }
+      ]
+    }
+  ],
+  "turns": [
+    {
+      "step": 0,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": null,
+        "filters": {},
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": "[59 items]",
+        "total_results": 59,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": null,
+      "message": "screenshot requested (no-op)",
+      "final_response": null
+    },
+    {
+      "step": 1,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": null,
+        "filters": {},
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": "[59 items]",
+        "total_results": 59,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          361,
+          32
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 2,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": null,
+        "filters": {},
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": "[59 items]",
+        "total_results": 59,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "type",
+        "text": "Seattle"
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 3,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": null,
+        "filters": {},
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": "[59 items]",
+        "total_results": 59,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          695,
+          30
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 4,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": "Seattle",
+        "filters": {},
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005",
+          "LST-038",
+          "LST-049",
+          "LST-050",
+          "LST-057",
+          "LST-059"
+        ],
+        "total_results": 6,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          75,
+          257
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 5,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005",
+          "LST-050"
+        ],
+        "total_results": 2,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          76,
+          785
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 6,
+      "surface": "SearchResults",
+      "state": {
+        "surface": "SearchResults",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          502,
+          364
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 7,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1030,
+          573
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 8,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1047,
+          767
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 9,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1158,
+          768
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 10,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1188,
+          573
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 11,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1327,
+          768
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 12,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": "2026-04-17",
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1025,
+          640
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 13,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": "2026-04-17",
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "hotkey",
+        "keys": [
+          "Control",
+          "A"
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 14,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": "2026-04-17",
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "type",
+        "text": "3"
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 15,
+      "surface": "ListingDetail",
+      "state": {
+        "surface": "ListingDetail",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": "2026-04-17",
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          1070,
+          693
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 16,
+      "surface": "Checkout",
+      "state": {
+        "surface": "Checkout",
+        "surface_params": {
+          "listing_id": "LST-005"
+        },
+        "modal_state": null,
+        "back_stack": [
+          {
+            "surface": "SearchResults",
+            "surface_params": {}
+          },
+          {
+            "surface": "ListingDetail",
+            "surface_params": {
+              "listing_id": "LST-005"
+            }
+          }
+        ],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": "2026-04-14",
+        "booking_check_out": "2026-04-17",
+        "booking_guests": 3,
+        "booking_listing_id": "LST-005",
+        "reservations": [],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": {
+        "action": "left_click",
+        "coordinate": [
+          480,
+          645
+        ]
+      },
+      "message": null,
+      "final_response": null
+    },
+    {
+      "step": 17,
+      "surface": "Reservations",
+      "state": {
+        "surface": "Reservations",
+        "surface_params": {},
+        "modal_state": null,
+        "back_stack": [],
+        "search_query": "Seattle",
+        "filters": {
+          "property_type": [
+            "Condo"
+          ],
+          "amenities": [
+            "Pool"
+          ]
+        },
+        "sort_by": "relevance",
+        "page": 0,
+        "visible_ids": [
+          "LST-005"
+        ],
+        "total_results": 1,
+        "booking_check_in": null,
+        "booking_check_out": null,
+        "booking_guests": null,
+        "booking_listing_id": null,
+        "reservations": [
+          {
+            "reservation_id": "RES-001",
+            "listing_id": "LST-005",
+            "listing_title": "Vibrant Loft in Capitol Hill",
+            "listing_location": "Seattle, Washington",
+            "check_in": "2026-04-14",
+            "check_out": "2026-04-17",
+            "guests": 3,
+            "total_price": 1768,
+            "status": "confirmed",
+            "booked_at": "2026-03-24T02:39:25.318Z"
+          }
+        ],
+        "viewed_listings": [
+          "LST-005"
+        ],
+        "error_message": null
+      },
+      "action": null,
+      "message": null,
+      "final_response": "Task completed."
+    }
+  ],
+  "judge": {
+    "agent_output": {},
+    "local_storage": [
+      {
+        "path": "reservations.0.listing_id",
+        "equals": "LST-005",
+        "description": "reservations.0.listing_id should be LST-005"
+      },
+      {
+        "path": "reservations.0.status",
+        "equals": "confirmed",
+        "description": "reservations.0.status should be confirmed"
+      },
+      {
+        "path": "reservations.0.check_in",
+        "equals": "2026-04-14",
+        "description": "reservations.0.check_in should be 2026-04-14"
+      },
+      {
+        "path": "reservations.0.check_out",
+        "equals": "2026-04-17",
+        "description": "reservations.0.check_out should be 2026-04-17"
+      },
+      {
+        "path": "reservations.0.guests",
+        "equals": 3,
+        "description": "reservations.0.guests should be 3"
+      }
+    ]
+  }
+}
