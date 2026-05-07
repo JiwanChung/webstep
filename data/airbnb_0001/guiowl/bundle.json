@@ -20,32 +20,12 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:52:00.368Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "amenities",
         "filter_value": [
           "Pool"
         ]
       },
       "timestamp": "2026-03-16T12:52:03.730Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-16T12:52:03.731Z"
     },
     {
       "action": "Search",
@@ -74,26 +54,6 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-16T12:52:36.375Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:52:43.217Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "property_type",
         "filter_value": [
           "Condo"
@@ -111,29 +71,6 @@
         ]
       },
       "timestamp": "2026-03-16T12:52:56.139Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa"
-        ]
-      },
-      "timestamp": "2026-03-16T12:52:56.139Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:02.573Z"
     },
     {
       "action": "SetFilter",
@@ -168,19 +105,6 @@
           "Condo",
           "Villa",
           "Cabin",
-          "Cottage"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:08.650Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
           "Cottage",
           "Loft"
         ]
@@ -196,54 +120,11 @@
           "Villa",
           "Cabin",
           "Cottage",
-          "Loft"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:15.303Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
           "Loft",
           "Studio"
         ]
       },
       "timestamp": "2026-03-16T12:53:21.848Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:21.849Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:28.176Z"
     },
     {
       "action": "SetFilter",
@@ -278,31 +159,6 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:34.301Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:40.400Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
           "Loft",
           "Studio"
         ]
@@ -325,31 +181,10 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:46.701Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
           "Condo"
         ]
       },
       "timestamp": "2026-03-16T12:53:52.123Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:52.124Z"
     },
     {
       "action": "SetFilter",
@@ -368,47 +203,11 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa"
-        ]
-      },
-      "timestamp": "2026-03-16T12:53:57.423Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
           "Villa",
           "Cabin"
         ]
       },
       "timestamp": "2026-03-16T12:54:02.029Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:02.030Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:06.415Z"
     },
     {
       "action": "SetFilter",
@@ -446,40 +245,11 @@
           "Villa",
           "Cabin",
           "Cottage",
-          "Loft"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:11.495Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
           "Loft",
           "Studio"
         ]
       },
       "timestamp": "2026-03-16T12:54:16.829Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:16.830Z"
     },
     {
       "action": "SetFilter",
@@ -501,51 +271,12 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:22.084Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
           "Cottage",
           "Loft",
           "Studio"
         ]
       },
       "timestamp": "2026-03-16T12:54:27.832Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:27.832Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:33.454Z"
     },
     {
       "action": "SetFilter",
@@ -575,31 +306,10 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:39.280Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
           "Condo"
         ]
       },
       "timestamp": "2026-03-16T12:54:45.247Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:54:45.248Z"
     },
     {
       "action": "ViewListing",
@@ -812,6 +522,72 @@
       "step": 2,
       "action": "SetFilter",
       "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "amenity_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "18 -> 18 listings"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "action": "Search",
+      "payload": {
+        "query": "Seattle"
+      },
+      "skills": [
+        {
+          "skill": "query_formulation",
+          "family": "configuration",
+          "score": 1.0,
+          "detail": "results: 18 -> 6"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "action": "SortBy",
+      "payload": {
+        "sort_field": "price_asc"
+      },
+      "skills": [
+        {
+          "skill": "sort_usage",
+          "family": "refinement",
+          "score": 0.0,
+          "detail": "no change"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "amenity_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "18 -> 18 listings"
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "action": "SetFilter",
+      "payload": {
         "filter_field": "property_type",
         "filter_value": [
           "Condo"
@@ -827,83 +603,18 @@
       ]
     },
     {
-      "step": 3,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 4,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 5,
-      "action": "Search",
-      "payload": {
-        "query": "Seattle"
-      },
-      "skills": [
-        {
-          "skill": "query_formulation",
-          "family": "configuration",
-          "score": 1.0,
-          "detail": "results: 18 -> 6"
-        }
-      ]
-    },
-    {
-      "step": 6,
-      "action": "SortBy",
-      "payload": {
-        "sort_field": "price_asc"
-      },
-      "skills": [
-        {
-          "skill": "sort_usage",
-          "family": "refinement",
-          "score": 0.0,
-          "detail": "no change"
-        }
-      ]
-    },
-    {
       "step": 7,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
+        "filter_field": "property_type",
         "filter_value": [
-          "Pool"
+          "Condo",
+          "Villa"
         ]
       },
       "skills": [
         {
-          "skill": "amenity_filtering",
+          "skill": "property_type_filtering",
           "family": "refinement",
           "score": 0,
           "detail": "6 -> 6 listings"
@@ -914,14 +625,16 @@
       "step": 8,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
+        "filter_field": "property_type",
         "filter_value": [
-          "Pool"
+          "Condo",
+          "Villa",
+          "Cabin"
         ]
       },
       "skills": [
         {
-          "skill": "amenity_filtering",
+          "skill": "property_type_filtering",
           "family": "refinement",
           "score": 0,
           "detail": "6 -> 6 listings"
@@ -934,7 +647,10 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo"
+          "Condo",
+          "Villa",
+          "Cabin",
+          "Cottage"
         ]
       },
       "skills": [
@@ -952,7 +668,11 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo"
+          "Condo",
+          "Villa",
+          "Cabin",
+          "Cottage",
+          "Loft"
         ]
       },
       "skills": [
@@ -971,7 +691,11 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa"
+          "Villa",
+          "Cabin",
+          "Cottage",
+          "Loft",
+          "Studio"
         ]
       },
       "skills": [
@@ -990,7 +714,10 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa"
+          "Cabin",
+          "Cottage",
+          "Loft",
+          "Studio"
         ]
       },
       "skills": [
@@ -1009,8 +736,9 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa",
-          "Cabin"
+          "Cottage",
+          "Loft",
+          "Studio"
         ]
       },
       "skills": [
@@ -1029,8 +757,8 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa",
-          "Cabin"
+          "Loft",
+          "Studio"
         ]
       },
       "skills": [
@@ -1049,9 +777,7 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage"
+          "Studio"
         ]
       },
       "skills": [
@@ -1069,10 +795,7 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage"
+          "Condo"
         ]
       },
       "skills": [
@@ -1091,10 +814,7 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft"
+          "Villa"
         ]
       },
       "skills": [
@@ -1114,9 +834,7 @@
         "filter_value": [
           "Condo",
           "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft"
+          "Cabin"
         ]
       },
       "skills": [
@@ -1137,9 +855,7 @@
           "Condo",
           "Villa",
           "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
+          "Cottage"
         ]
       },
       "skills": [
@@ -1161,8 +877,7 @@
           "Villa",
           "Cabin",
           "Cottage",
-          "Loft",
-          "Studio"
+          "Loft"
         ]
       },
       "skills": [
@@ -1181,6 +896,7 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
+          "Villa",
           "Cabin",
           "Cottage",
           "Loft",
@@ -1246,7 +962,6 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Cottage",
           "Loft",
           "Studio"
         ]
@@ -1267,7 +982,6 @@
         "filter_field": "property_type",
         "filter_value": [
           "Condo",
-          "Loft",
           "Studio"
         ]
       },
@@ -1286,9 +1000,7 @@
       "payload": {
         "filter_field": "property_type",
         "filter_value": [
-          "Condo",
-          "Loft",
-          "Studio"
+          "Condo"
         ]
       },
       "skills": [
@@ -1302,490 +1014,6 @@
     },
     {
       "step": 27,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 28,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 29,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 30,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 31,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 32,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 33,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 34,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 35,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 36,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 37,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 38,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 39,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 40,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Villa",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 41,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 42,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cabin",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 43,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 44,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Cottage",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 45,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 46,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Loft",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 47,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 48,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo",
-          "Studio"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 49,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 50,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 51,
       "action": "ViewListing",
       "payload": {
         "listing_id": "LST-005"
@@ -1796,19 +1024,6 @@
           "family": "inspection",
           "score": 1.0,
           "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 52,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }

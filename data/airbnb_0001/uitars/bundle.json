@@ -20,32 +20,12 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:55:48.395Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "amenities",
         "filter_value": [
           "Pool"
         ]
       },
       "timestamp": "2026-03-16T12:55:51.188Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-16T12:55:51.189Z"
     },
     {
       "action": "Search",
@@ -226,14 +206,14 @@
       "step": 2,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "property_type",
+        "filter_field": "amenities",
         "filter_value": [
-          "Condo"
+          "Pool"
         ]
       },
       "skills": [
         {
-          "skill": "property_type_filtering",
+          "skill": "amenity_filtering",
           "family": "refinement",
           "score": 0,
           "detail": "18 -> 18 listings"
@@ -242,42 +222,6 @@
     },
     {
       "step": 3,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 4,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 5,
       "action": "Search",
       "payload": {
         "query": "Seattle"
@@ -292,7 +236,7 @@
       ]
     },
     {
-      "step": 6,
+      "step": 4,
       "action": "SortBy",
       "payload": {
         "sort_field": "price_asc"
@@ -307,7 +251,7 @@
       ]
     },
     {
-      "step": 7,
+      "step": 5,
       "action": "ViewListing",
       "payload": {
         "listing_id": "LST-057"
@@ -318,19 +262,6 @@
           "family": "inspection",
           "score": 1.0,
           "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 8,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }

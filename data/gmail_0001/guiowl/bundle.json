@@ -806,21 +806,7 @@
       ]
     }
   },
-  "skill_labels": [
-    {
-      "step": 1,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
-        }
-      ]
-    }
-  ],
+  "skill_labels": [],
   "turns": [
     {
       "step": 0,

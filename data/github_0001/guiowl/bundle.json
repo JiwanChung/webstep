@@ -6239,19 +6239,6 @@
           "detail": "no change"
         }
       ]
-    },
-    {
-      "step": 3,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "commit_timing",
-          "family": "commit",
-          "score": 1.0,
-          "detail": "coverage: 1.00"
-        }
-      ]
     }
   ],
   "turns": [

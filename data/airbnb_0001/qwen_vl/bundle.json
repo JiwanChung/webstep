@@ -27,32 +27,12 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-27T11:07:30.239Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "amenities",
         "filter_value": [
           "Pool"
         ]
       },
       "timestamp": "2026-03-27T11:07:33.286Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-27T11:07:33.289Z"
     },
     {
       "action": "ViewListing",
@@ -114,32 +94,12 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-27T11:08:40.852Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "property_type",
         "filter_value": [
           "Condo"
         ]
       },
       "timestamp": "2026-03-27T11:08:45.199Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-27T11:08:45.202Z"
     },
     {
       "action": "SortBy",
@@ -386,14 +346,14 @@
       "step": 3,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "property_type",
+        "filter_field": "amenities",
         "filter_value": [
-          "Condo"
+          "Pool"
         ]
       },
       "skills": [
         {
-          "skill": "property_type_filtering",
+          "skill": "amenity_filtering",
           "family": "refinement",
           "score": 0,
           "detail": "6 -> 6 listings"
@@ -402,42 +362,6 @@
     },
     {
       "step": 4,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 5,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 6,
       "action": "ViewListing",
       "payload": {
         "listing_id": "LST-005"
@@ -452,7 +376,7 @@
       ]
     },
     {
-      "step": 7,
+      "step": 5,
       "action": "SetBookingField",
       "payload": {
         "field": "check_in",
@@ -468,7 +392,7 @@
       ]
     },
     {
-      "step": 8,
+      "step": 6,
       "action": "SetBookingField",
       "payload": {
         "field": "check_out",
@@ -480,6 +404,34 @@
           "family": "waste",
           "score": 0.0,
           "detail": "unproductive action: SetBookingField"
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "action": "CloseListing",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "comparison",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "ListingDetail -> SearchResults"
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "action": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      },
+      "skills": [
+        {
+          "skill": "listing_inspection",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "27 new fields"
         }
       ]
     },
@@ -498,34 +450,6 @@
     },
     {
       "step": 10,
-      "action": "ViewListing",
-      "payload": {
-        "listing_id": "LST-005"
-      },
-      "skills": [
-        {
-          "skill": "listing_inspection",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 11,
-      "action": "CloseListing",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "comparison",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "ListingDetail -> SearchResults"
-        }
-      ]
-    },
-    {
-      "step": 12,
       "action": "Search",
       "payload": {
         "query": "Seattle"
@@ -540,79 +464,43 @@
       ]
     },
     {
+      "step": 11,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "amenity_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "action": "SetFilter",
+      "payload": {
+        "filter_field": "property_type",
+        "filter_value": [
+          "Condo"
+        ]
+      },
+      "skills": [
+        {
+          "skill": "property_type_filtering",
+          "family": "refinement",
+          "score": 0,
+          "detail": "6 -> 6 listings"
+        }
+      ]
+    },
+    {
       "step": 13,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 14,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 15,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 16,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "6 -> 6 listings"
-        }
-      ]
-    },
-    {
-      "step": 17,
       "action": "SortBy",
       "payload": {
         "sort_field": "price_asc"
@@ -623,6 +511,62 @@
           "family": "refinement",
           "score": 0.0,
           "detail": "no change"
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "action": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      },
+      "skills": [
+        {
+          "skill": "listing_inspection",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "27 new fields"
+        }
+      ]
+    },
+    {
+      "step": 15,
+      "action": "CloseListing",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "comparison",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "ListingDetail -> SearchResults"
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "action": "ViewListing",
+      "payload": {
+        "listing_id": "LST-005"
+      },
+      "skills": [
+        {
+          "skill": "listing_inspection",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "27 new fields"
+        }
+      ]
+    },
+    {
+      "step": 17,
+      "action": "CloseListing",
+      "payload": {},
+      "skills": [
+        {
+          "skill": "comparison",
+          "family": "inspection",
+          "score": 1.0,
+          "detail": "ListingDetail -> SearchResults"
         }
       ]
     },
@@ -666,75 +610,6 @@
           "family": "inspection",
           "score": 1.0,
           "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 21,
-      "action": "CloseListing",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "comparison",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "ListingDetail -> SearchResults"
-        }
-      ]
-    },
-    {
-      "step": 22,
-      "action": "ViewListing",
-      "payload": {
-        "listing_id": "LST-005"
-      },
-      "skills": [
-        {
-          "skill": "listing_inspection",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 23,
-      "action": "CloseListing",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "comparison",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "ListingDetail -> SearchResults"
-        }
-      ]
-    },
-    {
-      "step": 24,
-      "action": "ViewListing",
-      "payload": {
-        "listing_id": "LST-005"
-      },
-      "skills": [
-        {
-          "skill": "listing_inspection",
-          "family": "inspection",
-          "score": 1.0,
-          "detail": "27 new fields"
-        }
-      ]
-    },
-    {
-      "step": 25,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }

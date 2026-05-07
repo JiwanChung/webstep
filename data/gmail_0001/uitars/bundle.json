@@ -820,10 +820,10 @@
       },
       "skills": [
         {
-          "skill": "bulk_management",
-          "family": "commit",
+          "skill": "thread_selection",
+          "family": "navigation",
           "score": 1.0,
-          "detail": "coverage: 1.00"
+          "detail": "selected thread"
         }
       ]
     },
@@ -839,19 +839,6 @@
           "family": "inspection",
           "score": 1.0,
           "detail": "2 new fields"
-        }
-      ]
-    },
-    {
-      "step": 4,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }

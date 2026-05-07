@@ -15,13 +15,6 @@
       "timestamp": "2026-03-16T15:06:28.805Z"
     },
     {
-      "action": "SearchEmails",
-      "payload": {
-        "query": "ProjectAlpha006"
-      },
-      "timestamp": "2026-03-16T15:06:31.213Z"
-    },
-    {
       "action": "OpenThread",
       "payload": {
         "thread_id": "THR-006"
@@ -821,21 +814,6 @@
     },
     {
       "step": 2,
-      "action": "SearchEmails",
-      "payload": {
-        "query": "ProjectAlpha006"
-      },
-      "skills": [
-        {
-          "skill": "search_refinement",
-          "family": "refinement",
-          "score": 1.0,
-          "detail": "-> 1 results"
-        }
-      ]
-    },
-    {
-      "step": 3,
       "action": "OpenThread",
       "payload": {
         "thread_id": "THR-006"
@@ -850,7 +828,7 @@
       ]
     },
     {
-      "step": 4,
+      "step": 3,
       "action": "Star",
       "payload": {
         "thread_id": "THR-006"
@@ -861,19 +839,6 @@
           "family": "commit",
           "score": 1.0,
           "detail": "coverage: 1.00"
-        }
-      ]
-    },
-    {
-      "step": 5,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }

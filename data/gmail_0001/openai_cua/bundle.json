@@ -1261,19 +1261,6 @@
           "detail": "coverage: 1.00"
         }
       ]
-    },
-    {
-      "step": 23,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
-        }
-      ]
     }
   ],
   "turns": [

@@ -20,56 +20,12 @@
     {
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-16T12:51:07.367Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities"
-      },
-      "timestamp": "2026-03-16T12:51:09.891Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities"
-      },
-      "timestamp": "2026-03-16T12:51:09.895Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
         "filter_field": "property_type",
         "filter_value": [
           "Condo"
         ]
       },
       "timestamp": "2026-03-16T12:51:13.138Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "timestamp": "2026-03-16T12:51:13.140Z"
-    },
-    {
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "timestamp": "2026-03-16T12:51:17.112Z"
     },
     {
       "action": "SetFilter",
@@ -98,8 +54,8 @@
     {
       "action": "BookListing",
       "payload": {
-        "check_in": "2025-04-14",
-        "check_out": "2025-04-17",
+        "check_in": "2026-04-14",
+        "check_out": "2026-04-17",
         "guests": "3"
       },
       "timestamp": "2026-03-16T12:51:54.092Z"
@@ -275,14 +231,14 @@
       "step": 2,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities",
+        "filter_field": "property_type",
         "filter_value": [
-          "Pool"
+          "Condo"
         ]
       },
       "skills": [
         {
-          "skill": "amenity_filtering",
+          "skill": "property_type_filtering",
           "family": "refinement",
           "score": 0,
           "detail": "18 -> 18 listings"
@@ -293,7 +249,10 @@
       "step": 3,
       "action": "SetFilter",
       "payload": {
-        "filter_field": "amenities"
+        "filter_field": "amenities",
+        "filter_value": [
+          "Pool"
+        ]
       },
       "skills": [
         {
@@ -306,93 +265,6 @@
     },
     {
       "step": 4,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities"
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 5,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 6,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "property_type",
-        "filter_value": [
-          "Condo"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "property_type_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 7,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 8,
-      "action": "SetFilter",
-      "payload": {
-        "filter_field": "amenities",
-        "filter_value": [
-          "Pool"
-        ]
-      },
-      "skills": [
-        {
-          "skill": "amenity_filtering",
-          "family": "refinement",
-          "score": 0,
-          "detail": "18 -> 18 listings"
-        }
-      ]
-    },
-    {
-      "step": 9,
       "action": "SortBy",
       "payload": {
         "sort_field": "price_asc"
@@ -407,7 +279,7 @@
       ]
     },
     {
-      "step": 10,
+      "step": 5,
       "action": "ViewListing",
       "payload": {
         "listing_id": "LST-005"
@@ -422,7 +294,7 @@
       ]
     },
     {
-      "step": 11,
+      "step": 6,
       "action": "BookListing",
       "payload": {
         "check_in": "2025-04-14",
@@ -435,19 +307,6 @@
           "family": "commit",
           "score": 1.0,
           "detail": "ListingDetail -> Checkout"
-        }
-      ]
-    },
-    {
-      "step": 12,
-      "action": "done",
-      "payload": {},
-      "skills": [
-        {
-          "skill": "waste",
-          "family": "waste",
-          "score": 0.0,
-          "detail": "unproductive action: done"
         }
       ]
     }
