@@ -567,10 +567,12 @@ a:hover { text-decoration: underline; }
   font-size: 1.3rem; font-weight: 700; text-align: center;
   margin: 40px 0 20px;
 }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
 .leaderboard {
   width: 100%; border-collapse: collapse;
   font-size: 0.9rem; margin: 0 auto 12px;
-  max-width: 900px;
+  max-width: 900px; min-width: 640px;
 }
 .leaderboard th, .leaderboard td {
   padding: 10px 14px; text-align: center;

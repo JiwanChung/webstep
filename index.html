@@ -149,7 +149,7 @@
       <div class="domain-card"><i class="fas fa-comments"></i><span>Team Chat</span></div>
     </div>
     <div class="figure-block">
-      <img src="static/figures/task_sunburst.png" alt="Task distribution across domains" class="figure-img" style="max-width:900px;" onerror="this.style.display='none';">
+      <img src="static/figures/task_sunburst.png" alt="Task distribution across domains" class="figure-img" style="max-width:min(900px, 100%);" onerror="this.style.display='none';">
     </div>
   </div>
 </section>
@@ -160,6 +160,7 @@
 <section class="leaderboard-section">
   <div class="container">
     <h2 class="section-title">Leaderboard</h2>
+    <div class="table-scroll">
     <table class="leaderboard">
       <thead>
         <tr>
@@ -226,6 +227,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <p class="table-caption">Terminal success alongside process-level metrics from semantic MDP traces. Process metrics reveal behavioral differences not visible from terminal success alone.</p>
   </div>
 </section>
