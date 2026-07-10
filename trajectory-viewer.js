@@ -7,7 +7,7 @@
 // ══════════════════════════════════════════════════════════════
 
 const SAMPLES = [
-  { id: "airbnb_0001",    site: "Housing" },
+  { id: "airbnb_0001",    site: "Accommodation" },
   { id: "github_0001",    site: "Code Repo" },
   { id: "gmail_0001",     site: "Mail" },
 ];
@@ -34,15 +34,28 @@ let data = null;
 let currentSample = 0;
 let currentAgent = 0;
 let activeCol = null;
+let pendingCol = null; // one-shot column from the ?col= deep link
 let mdpSteps = [];
 let turnGroups = [];
 let turnToMdp = [];
+let triggerByTurn = {}; // turn index -> mdp index it dispatched
 
 // ══════════════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════════════
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Deep link: ?task=airbnb_0001&agent=uitars&col=45
+  const params = new URLSearchParams(location.search);
+  const taskIdx = SAMPLES.findIndex(s => s.id === params.get("task"));
+  const agentIdx = AGENTS.findIndex(a => a.id === params.get("agent"));
+  if (taskIdx >= 0) currentSample = taskIdx;
+  if (agentIdx >= 0) currentAgent = agentIdx;
+  const colParam = parseInt(params.get("col"));
+  if (!Number.isNaN(colParam)) pendingCol = colParam;
+  document.querySelectorAll(".traj-tab").forEach((t, i) =>
+    t.classList.toggle("active", i === currentSample));
+
   // Task tabs
   document.querySelectorAll(".traj-tab").forEach((tab, i) => {
     tab.addEventListener("click", () => {
@@ -81,7 +94,9 @@ async function loadSample(taskId, agent) {
     if (!resp.ok) throw new Error(`No data for ${agent} on ${taskId}`);
     data = await resp.json();
     processData();
-    activeCol = 0;
+    activeCol = pendingCol !== null
+      ? Math.min(Math.max(pendingCol, 0), data.turns.length - 1) : 0;
+    pendingCol = null;
     render();
   } catch (e) {
     console.error("Failed to load", taskId, agent, e);
@@ -147,29 +162,40 @@ function processData() {
         turnGroups[mi].push(t);
       }
     }
-    return;
-  }
+  } else {
+    let mdpIdx = 0;
+    let groupStart = 0;
 
-  let mdpIdx = 0;
-  let groupStart = 0;
-
-  for (let i = 1; i < turns.length; i++) {
-    if (mdpIdx < mdp_trajectory.length && stateChanged(turns[i - 1].state, turns[i].state)) {
-      const group = [];
-      for (let j = groupStart; j < i; j++) { group.push(j); turnToMdp[j] = mdpIdx; }
-      turnGroups[mdpIdx] = group;
-      groupStart = i;
-      mdpIdx++;
+    for (let i = 1; i < turns.length; i++) {
+      if (mdpIdx < mdp_trajectory.length && stateChanged(turns[i - 1].state, turns[i].state)) {
+        const group = [];
+        for (let j = groupStart; j < i; j++) { group.push(j); turnToMdp[j] = mdpIdx; }
+        turnGroups[mdpIdx] = group;
+        groupStart = i;
+        mdpIdx++;
+      }
+    }
+    // Remaining turns → last MDP action or overflow
+    if (groupStart < turns.length) {
+      const idx = Math.min(mdpIdx, mdpSteps.length - 1);
+      if (!turnGroups[idx]) turnGroups[idx] = [];
+      for (let j = groupStart; j < turns.length; j++) {
+        turnGroups[idx].push(j);
+        turnToMdp[j] = idx;
+      }
     }
   }
-  // Remaining turns → last MDP action or overflow
-  if (groupStart < turns.length) {
-    const idx = Math.min(mdpIdx, mdpSteps.length - 1);
-    if (!turnGroups[idx]) turnGroups[idx] = [];
-    for (let j = groupStart; j < turns.length; j++) {
-      turnGroups[idx].push(j);
-      turnToMdp[j] = idx;
-    }
+
+  // Which turn actually dispatched each MDP action: precomputed by
+  // fix_bundles.py when available, else the last turn of each span.
+  triggerByTurn = {};
+  const trig = data.mdp_trigger_turns;
+  if (Array.isArray(trig) && trig.length === mdpSteps.length) {
+    trig.forEach((t, mi) => { if (t !== null && t >= 0) triggerByTurn[t] = mi; });
+  } else {
+    turnGroups.forEach((g, mi) => {
+      if (g && g.length) triggerByTurn[g[g.length - 1]] = mi;
+    });
   }
 }
 
@@ -208,7 +234,7 @@ function scrollActiveColIntoView() {
   let delta = 0;
   if (c.left < w.left + margin) delta = c.left - (w.left + margin);
   else if (c.right > w.right - margin) delta = c.right - (w.right - margin);
-  if (delta) wrapper.scrollBy({ left: delta, behavior: "smooth" });
+  if (delta) wrapper.scrollBy({ left: delta, behavior: "auto" });
 }
 
 function renderInstruction() {
@@ -243,8 +269,9 @@ function renderThreeRowTimeline() {
   }
 
   // ── Build HTML ──
-  const COL_W = 130; // px per column
-  const totalW = cols.length * COL_W;
+  const COL_W = 130;   // px per column
+  const LABEL_W = 60;  // .tr-row-label width; rows are label + columns wide
+  const totalW = cols.length * COL_W + LABEL_W;
 
   let html = `<div class="tr-scroll" style="min-width:${totalW}px;">`;
 
@@ -288,9 +315,18 @@ function renderThreeRowTimeline() {
       else if (text) label += `("${text.length > 10 ? text.slice(0, 10) + "…" : text}")`;
       else if (keys) label += `(${keys.join("+")})`;
     }
+    const trigMi = triggerByTurn[ci];
+    let trigDot = "";
+    if (trigMi !== undefined) {
+      const step = mdpSteps[trigMi];
+      const fm = FAMILY_META[step.family] || FAMILY_META.configuration;
+      trigDot = `<span class="tr-trigger-dot" style="background:${fm.color};"
+        title="this action dispatched ${esc(step.action)}"></span>`;
+    }
     html += `<div class="tr-cell tr-cell-action ${isActive ? "active" : ""}" data-col="${ci}" style="width:${COL_W}px;">
       <i class="fas ${iconCls}"></i>
       <span class="tr-action-label">${esc(label)}</span>
+      ${trigDot}
     </div>`;
   }
   html += `</div></div>`;
@@ -301,7 +337,23 @@ function renderThreeRowTimeline() {
   html += `<div class="tr-row-content" style="position:relative;height:52px;">`;
 
   if (mdpSpans.length === 0) {
-    html += `<div class="tr-mdp-empty">No valid MDP transitions recorded</div>`;
+    html += `<div class="tr-mdp-empty">No semantic transitions recorded</div>`;
+  }
+
+  // Trailing turns that never produced another transition (agent flailing
+  // after its last semantic action) get a distinct region, not a span.
+  // The final "done" turn is the episode ending, not flailing — skip it.
+  const lastAssigned = turnToMdp.reduce((acc, mi, t) => (mi >= 0 ? t : acc), -1);
+  let tailEnd = turns.length - 1;
+  const lastTurn = turns[tailEnd];
+  if (lastTurn && !lastTurn.action?.action && lastTurn.final_response) tailEnd--;
+  const nTail = tailEnd - lastAssigned;
+  if (mdpSpans.length > 0 && lastAssigned >= 0 && nTail > 0) {
+    const left = (lastAssigned + 1) * COL_W;
+    const label = `no further semantic transitions (${nTail} turn${nTail > 1 ? "s" : ""})`;
+    html += `<div class="tr-mdp-tail" style="left:${left}px;width:${nTail * COL_W}px;" title="${label}">
+      ${nTail >= 3 ? `<span class="tr-mdp-tail-label">${label}</span>` : ""}
+    </div>`;
   }
 
   for (const span of mdpSpans) {
@@ -334,7 +386,7 @@ function renderThreeRowTimeline() {
   const idleTurns = turns.length - totalGui;
   html += `<div class="tr-summary">
     Semantic trace &tau; = (s<sub>0</sub>, a<sub>0</sub>, &hellip; s<sub>${mdpSteps.length}</sub>)
-    | ${totalGui} GUI actions${idleTurns > 0 ? ` (+${idleTurns} idle)` : ""} -> ${mdpSteps.length} MDP transitions
+    | ${totalGui} GUI actions${idleTurns > 0 ? ` (+${idleTurns} idle)` : ""} -> ${mdpSteps.length} semantic transitions
   </div>`;
 
   html += `</div>`; // end tr-scroll
@@ -446,10 +498,10 @@ function renderMetrics() {
     </div>`;
   }
   if (!skillRows) {
-    skillRows = `<div class="metric-detail">No valid MDP transitions recorded</div>`;
+    skillRows = `<div class="metric-detail">No semantic transitions recorded</div>`;
   }
   const skillHtml = `<div class="metric-card-wide">
-    <h4>Skill Accuracy</h4>
+    <h4>Skill Invocation</h4>
     <div class="metric-skill-list">${skillRows}</div>
   </div>`;
 

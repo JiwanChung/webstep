@@ -237,9 +237,16 @@ a:hover { text-decoration: underline; }
 .tr-cell-action {
   flex-shrink: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 2px;
-  padding: 6px 4px; border-right: 1px solid #eee;
+  padding: 6px 4px 13px; border-right: 1px solid #eee;
   cursor: pointer; transition: background 0.15s;
-  min-height: 48px;
+  min-height: 48px; position: relative;
+}
+
+/* Marks the GUI action that actually dispatched an MDP transition */
+.tr-trigger-dot {
+  position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
+  width: 7px; height: 7px; border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
 }
 .tr-cell-action:hover { background: var(--bg); }
 .tr-cell-action.active { background: var(--accent-light); }
@@ -288,6 +295,23 @@ a:hover { text-decoration: underline; }
 .tr-mdp-empty {
   display: flex; align-items: center; height: 52px; padding: 0 14px;
   font-size: 0.78rem; font-style: italic; color: var(--text-muted);
+}
+
+.tr-mdp-tail {
+  position: absolute; top: 6px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px dashed var(--border); border-radius: 6px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 6px,
+    rgba(148, 163, 184, 0.10) 6px, rgba(148, 163, 184, 0.10) 12px);
+  font-size: 0.72rem; font-style: italic; color: var(--text-muted);
+  overflow: hidden; white-space: nowrap; padding: 0 8px;
+  box-sizing: border-box;
+}
+
+/* Centered in the region; sticks to the viewport edges while scrolling */
+.tr-mdp-tail-label {
+  position: sticky; left: 76px; right: 12px;
+  background: var(--bg); padding: 2px 8px; border-radius: 4px;
 }
 
 .metric-idle { color: var(--text-muted); font-size: 0.78rem; }

@@ -294,13 +294,15 @@ def compute_turn_to_mdp(bundle, old_mdp, kept):
     not leak into the following OpenThread span."""
     turns, new_mdp = bundle["turns"], bundle["mdp_trajectory"]
     turn_to_mdp = [-1] * len(turns)
+    triggers = [None] * len(new_mdp)
     if not new_mdp or not turns:
-        return turn_to_mdp
+        return turn_to_mdp, triggers
 
     boundaries = state_boundaries(turns)
     same_turn, separate = classify_dropped(old_mdp, kept)
     matches = align_mdp_to_boundaries(old_mdp, boundaries, same_turn, separate)
 
+    kept_pos = {k: i for i, k in enumerate(kept)}
     old_map = [-1] * len(turns)
     pos = 0
     for k in range(len(old_mdp)):
@@ -308,6 +310,8 @@ def compute_turn_to_mdp(bundle, old_mdp, kept):
             end = max(boundaries[matches[k]][0] - 1, pos)
             for t in range(pos, min(end + 1, len(turns))):
                 old_map[t] = k
+            if k in kept_pos:
+                triggers[kept_pos[k]] = min(end, len(turns) - 1)
             pos = end + 1
         elif k in same_turn:
             # Double-fire from the same GUI turn as its original: no turn.
@@ -315,9 +319,12 @@ def compute_turn_to_mdp(bundle, old_mdp, kept):
         elif pos < len(turns):
             # Silent transition with its own GUI turn: attribute one turn.
             old_map[pos] = k
+            if k in kept_pos:
+                triggers[kept_pos[k]] = pos
             pos += 1
-    for t in range(pos, len(turns)):
-        old_map[t] = len(old_mdp) - 1
+    # Turns after the last transition stay unassigned (-1): they culminated
+    # in nothing, and gluing them to the last span would misread as that
+    # action (e.g. uitars' 37-turn flail after ViewListing).
 
     # Fold original indices onto surviving entries. A dedup-dropped duplicate
     # folds onto the kept entry it repeated (the previous kept index); a
@@ -325,7 +332,7 @@ def compute_turn_to_mdp(bundle, old_mdp, kept):
     for t, k in enumerate(old_map):
         if k >= 0:
             turn_to_mdp[t] = min(max(bisect_right(kept, k) - 1, 0), len(new_mdp) - 1)
-    return turn_to_mdp
+    return turn_to_mdp, triggers
 
 
 # ══════════════════════════════════════════════════════════════
@@ -345,9 +352,11 @@ def main():
 
         metrics_changed = remap_metrics(bundle, old, kept)
 
-        t2m = compute_turn_to_mdp(bundle, old_mdp, kept)
-        mapping_changed = bundle.get("turn_to_mdp") != t2m
+        t2m, triggers = compute_turn_to_mdp(bundle, old_mdp, kept)
+        mapping_changed = (bundle.get("turn_to_mdp") != t2m
+                           or bundle.get("mdp_trigger_turns") != triggers)
         bundle["turn_to_mdp"] = t2m
+        bundle["mdp_trigger_turns"] = triggers
 
         if metrics_changed or mapping_changed:
             bundle_path.write_text(json.dumps(bundle, indent=2))
