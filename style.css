@@ -285,6 +285,13 @@ a:hover { text-decoration: underline; }
   font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
 }
 
+.tr-mdp-empty {
+  display: flex; align-items: center; height: 52px; padding: 0 14px;
+  font-size: 0.78rem; font-style: italic; color: var(--text-muted);
+}
+
+.metric-idle { color: var(--text-muted); font-size: 0.78rem; }
+
 /* Summary line */
 .tr-summary {
   text-align: center; font-size: 0.82rem;

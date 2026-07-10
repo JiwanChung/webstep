@@ -6203,13 +6203,12 @@
       1.0,
       1.0,
       1.0,
-      1.0,
       1.0
     ],
-    "commit_step": 3,
+    "commit_step": 2,
     "info_completion_time": 0,
-    "commit_lag": 3,
-    "total_steps": 5,
+    "commit_lag": 2,
+    "total_steps": 4,
     "visited_entities": [],
     "task_id": "github_0001",
     "template": "search_and_star",
@@ -6587,5 +6586,13 @@
         "description": "starred_repos should contains REPO-005"
       }
     ]
-  }
+  },
+  "turn_to_mdp": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2
+  ]
 }

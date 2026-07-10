@@ -195,14 +195,12 @@
       1.0,
       1.0,
       1.0,
-      1.0,
-      1.0,
       1.0
     ],
-    "commit_step": 9,
+    "commit_step": 7,
     "info_completion_time": 0,
-    "commit_lag": 9,
-    "total_steps": 11,
+    "commit_lag": 7,
+    "total_steps": 9,
     "visited_entities": [
       "LST-005"
     ],
@@ -1172,5 +1170,25 @@
         "description": "reservations.0.guests should be 3"
       }
     ]
-  }
+  },
+  "turn_to_mdp": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    2,
+    3,
+    4,
+    4,
+    5,
+    5,
+    5,
+    6,
+    6,
+    6,
+    6,
+    7,
+    7
+  ]
 }

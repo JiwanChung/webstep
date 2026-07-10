@@ -3,13 +3,12 @@ Monkey-patch data bundles to fix visible benchmark bugs in the website demo.
 
 Fixes:
   1. Deduplicate consecutive identical MDP transitions (Airbnb SetFilter double-dispatch).
-  2. Fix Fara airbnb wrong year (2025 -> 2026) in BookListing payload.
-  3. Drop malformed SetFilter entries with missing filter_value.
-  4. Re-label UI-TARS gmail SelectThread family from "commit" to "navigation".
-  5. Drop the trailing "done" skill label (waste/no-op) so it doesn't clutter the viewer.
-  6. Re-derive turnGroups would be needed in JS, but bundle only stores raw mdp_trajectory.
+  2. Drop malformed SetFilter entries with missing filter_value.
+  3. Re-label UI-TARS gmail SelectThread family from "commit" to "navigation".
+  4. Drop the trailing "done" skill label (waste/no-op) so it doesn't clutter the viewer.
 
-Run this AFTER prepare_data.py.
+Run this AFTER prepare_data.py, then run fix_bundles.py to recompute derived
+data (process_metrics remapping, turn_to_mdp alignment).
 """
 import json
 from pathlib import Path
@@ -104,15 +103,9 @@ def patch_bundle(bundle_path):
         changed = True
 
     # ── 5. Task-specific patches ──
-    if task_id == "airbnb_0001" and agent == "fara":
-        # Fix wrong year 2025 -> 2026
-        for step in bundle["mdp_trajectory"]:
-            payload = step.get("payload", {})
-            for key in ("check_in", "check_out"):
-                if key in payload and isinstance(payload[key], str):
-                    if payload[key].startswith("2025-"):
-                        payload[key] = "2026-" + payload[key][5:]
-                        changed = True
+    # NOTE: do NOT rewrite the fara airbnb_0001 booking year. The agent really
+    # typed 2025-04-14/2025-04-17 (visible in screenshots and turn states) and
+    # failed the task because of it; the MDP record must keep the faithful 2025.
 
     if task_id == "gmail_0001" and agent == "uitars":
         # Re-label SelectThread family from "commit" to "navigation"

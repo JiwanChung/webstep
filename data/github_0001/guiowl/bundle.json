@@ -6494,5 +6494,12 @@
         "description": "starred_repos should contains REPO-005"
       }
     ]
-  }
+  },
+  "turn_to_mdp": [
+    0,
+    0,
+    0,
+    1,
+    1
+  ]
 }

@@ -54,8 +54,8 @@
     {
       "action": "BookListing",
       "payload": {
-        "check_in": "2026-04-14",
-        "check_out": "2026-04-17",
+        "check_in": "2025-04-14",
+        "check_out": "2025-04-17",
         "guests": "3"
       },
       "timestamp": "2026-03-16T12:51:54.092Z"
@@ -183,17 +183,12 @@
       1.0,
       1.0,
       1.0,
-      1.0,
-      1.0,
-      1.0,
-      1.0,
-      1.0,
       1.0
     ],
-    "commit_step": 11,
+    "commit_step": 6,
     "info_completion_time": 0,
-    "commit_lag": 11,
-    "total_steps": 12,
+    "commit_lag": 6,
+    "total_steps": 7,
     "visited_entities": [
       "LST-005"
     ],
@@ -1086,5 +1081,23 @@
         "description": "reservations.0.guests should be 3"
       }
     ]
-  }
+  },
+  "turn_to_mdp": [
+    0,
+    0,
+    1,
+    2,
+    3,
+    3,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ]
 }

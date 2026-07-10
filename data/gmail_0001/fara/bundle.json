@@ -770,14 +770,13 @@
     "coverage_trajectory": [
       0.4,
       0.4,
-      0.4,
       1.0,
       1.0
     ],
-    "commit_step": 3,
-    "info_completion_time": 3,
+    "commit_step": 2,
+    "info_completion_time": 2,
     "commit_lag": 0,
-    "total_steps": 5,
+    "total_steps": 4,
     "visited_entities": [
       "THR-006"
     ],
@@ -1127,5 +1126,13 @@
         "description": "thread.THR-006.starred should be true"
       }
     ]
-  }
+  },
+  "turn_to_mdp": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2
+  ]
 }

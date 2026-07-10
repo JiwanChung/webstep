@@ -131,9 +131,25 @@ function processData() {
     };
   });
 
-  // Map GUI turns → MDP actions via state change detection
+  // Map GUI turns → MDP actions. Prefer the precomputed mapping from
+  // fix_bundles.py (anchor-based alignment that also handles transitions
+  // invisible in the slimmed state, e.g. Star); fall back to state-change
+  // detection for bundles that don't carry it.
   turnGroups = [];
   turnToMdp = new Array(turns.length).fill(-1);
+
+  if (Array.isArray(data.turn_to_mdp) && data.turn_to_mdp.length === turns.length) {
+    turnToMdp = data.turn_to_mdp.slice();
+    for (let t = 0; t < turnToMdp.length; t++) {
+      const mi = turnToMdp[t];
+      if (mi >= 0 && mi < mdpSteps.length) {
+        if (!turnGroups[mi]) turnGroups[mi] = [];
+        turnGroups[mi].push(t);
+      }
+    }
+    return;
+  }
+
   let mdpIdx = 0;
   let groupStart = 0;
 
@@ -267,6 +283,10 @@ function renderThreeRowTimeline() {
   html += `<div class="tr-row-label">MDP<br>records</div>`;
   html += `<div class="tr-row-content" style="position:relative;height:52px;">`;
 
+  if (mdpSpans.length === 0) {
+    html += `<div class="tr-mdp-empty">No valid MDP transitions recorded</div>`;
+  }
+
   for (const span of mdpSpans) {
     const step = mdpSteps[span.mdpIdx];
     const left = span.startCol * COL_W;
@@ -294,9 +314,10 @@ function renderThreeRowTimeline() {
 
   // ── Summary line ──
   const totalGui = turns.filter(t => t.action?.action).length;
+  const idleTurns = turns.length - totalGui;
   html += `<div class="tr-summary">
     Semantic trace &tau; = (s<sub>0</sub>, a<sub>0</sub>, &hellip; s<sub>${mdpSteps.length}</sub>)
-    | ${turns.length} GUI actions -> ${mdpSteps.length} MDP transitions
+    | ${totalGui} GUI actions${idleTurns > 0 ? ` (+${idleTurns} idle)` : ""} -> ${mdpSteps.length} MDP transitions
   </div>`;
 
   html += `</div>`; // end tr-scroll
@@ -407,18 +428,22 @@ function renderMetrics() {
       <span class="metric-skill-detail">${esc(s.detail)}</span>
     </div>`;
   }
+  if (!skillRows) {
+    skillRows = `<div class="metric-detail">No valid MDP transitions recorded</div>`;
+  }
   const skillHtml = `<div class="metric-card-wide">
     <h4>Skill Accuracy</h4>
     <div class="metric-skill-list">${skillRows}</div>
   </div>`;
 
   // Efficiency
-  const totalGui = data.turns.length;
+  const totalGui = data.turns.filter(t => t.action?.action).length;
+  const idleTurns = data.turns.length - totalGui;
   const totalMdp = mdpSteps.length;
   const optimal = data.oracle_trajectory.length;
   const effHtml = `<div class="metric-card-wide">
     <h4>Efficiency</h4>
-    <div class="metric-detail">GUI steps: <strong>${totalGui}</strong></div>
+    <div class="metric-detail">GUI steps: <strong>${totalGui}</strong>${idleTurns > 0 ? ` <span class="metric-idle">(+${idleTurns} idle)</span>` : ""}</div>
     <div class="metric-detail">MDP actions: <strong>${totalMdp}</strong></div>
     <div class="metric-detail">Optimal: <strong>${optimal}</strong></div>
     <div class="metric-detail">Coverage: <strong class="${m.coverage_at_commit >= 1 ? "good" : "bad"}">${(m.coverage_at_commit * 100).toFixed(0)}%</strong></div>
