@@ -88,6 +88,8 @@ function loadCurrent() {
 
 async function loadSample(taskId, agent) {
   activeCol = null;
+  hoverCol = null;
+  hideTag();
   renderAgentTabs();
   try {
     const resp = await fetch(`data/${taskId}/${agent}/bundle.json`);
@@ -408,24 +410,188 @@ function renderThreeRowTimeline() {
       render();
     });
   });
+
+  attachHoverInteractions(container);
+}
+
+// ══════════════════════════════════════════════════════════════
+//  SEMANTIC HOVER (tag + live preview + step emphasis)
+// ══════════════════════════════════════════════════════════════
+
+let tagEl = null;
+let caretEl = null;
+let hoverCol = null; // turn being previewed in the detail panel
+
+function getTag() {
+  if (!tagEl) {
+    tagEl = document.createElement("div");
+    tagEl.className = "semantic-tag";
+    document.body.appendChild(tagEl);
+    // Any scroll invalidates the fixed-position anchor: hide immediately.
+    window.addEventListener("scroll", hideTag, { passive: true, capture: true });
+  }
+  return tagEl;
+}
+
+function hideTag() {
+  if (tagEl) tagEl.classList.remove("visible");
+  if (caretEl) caretEl.classList.remove("visible");
+}
+
+// Semantic reading of a turn: its transition's family color + label text.
+function semanticReading(ci) {
+  const mi = turnToMdp[ci];
+  if (mi >= 0 && mdpSteps[mi]) {
+    const step = mdpSteps[mi];
+    const fm = FAMILY_META[step.family] || FAMILY_META.configuration;
+    const isTrigger = triggerByTurn[ci] !== undefined;
+    return {
+      color: fm.color,
+      bg: isTrigger ? fm.color : fm.bg,
+      fg: isTrigger ? "#fff" : fm.color,
+      text: isTrigger ? `dispatched ${step.action}` : `→ ${step.action}`,
+    };
+  }
+  return { color: "#d1d5db", bg: "#f3f4f6", fg: "#6b7280", text: "no semantic effect" };
+}
+
+// Caret at the top of the detail panel pointing at the previewed column:
+// makes the panel visibly "belong to" the hovered step.
+function showCaret(cellEl, color) {
+  if (!caretEl) {
+    caretEl = document.createElement("div");
+    caretEl.className = "preview-caret";
+    document.body.appendChild(caretEl);
+  }
+  const panel = document.querySelector(".detail-panel-area");
+  if (!panel) return;
+  const p = panel.getBoundingClientRect();
+  const r = cellEl.getBoundingClientRect();
+  const x = Math.min(Math.max(r.left + r.width / 2, p.left + 18), p.right - 18);
+  caretEl.style.left = `${x}px`;
+  caretEl.style.top = `${p.top + 1}px`;
+  caretEl.style.borderBottomColor = color;
+  caretEl.classList.add("visible");
+}
+
+// One-line semantic reading of the hovered turn, floated above its column.
+function showTag(ci, cellEl) {
+  const tag = getTag();
+  const reading = semanticReading(ci);
+  tag.textContent = reading.text;
+  tag.style.background = reading.bg;
+  tag.style.color = reading.fg;
+  tag.style.borderColor = reading.color;
+  const r = cellEl.getBoundingClientRect();
+  const wasHidden = !tag.classList.contains("visible");
+  if (wasHidden) tag.classList.add("no-glide"); // appear in place, glide afterwards
+  else tag.classList.remove("no-glide");
+  tag.style.left = `${r.left + r.width / 2}px`;
+  if (r.top < 46) {
+    tag.style.top = `${r.bottom + 6}px`;
+    tag.classList.add("below");
+  } else {
+    tag.style.top = `${r.top - 6}px`;
+    tag.classList.remove("below");
+  }
+  tag.classList.add("visible");
+}
+
+function setHovered(container, cols, mi, onTail) {
+  for (const ci of cols) {
+    container.querySelectorAll(`[data-col="${ci}"]`).forEach(el => el.classList.add("hovered"));
+  }
+  if (mi >= 0) {
+    container.querySelectorAll(`[data-mdp="${mi}"]`).forEach(el => el.classList.add("hovered"));
+  }
+  if (onTail) {
+    container.querySelectorAll(".tr-mdp-tail").forEach(el => el.classList.add("hovered"));
+  }
+}
+
+function clearHovered(container) {
+  container.querySelectorAll(".hovered").forEach(el => el.classList.remove("hovered"));
+}
+
+function setPanelHighlight(color) {
+  const panel = document.querySelector(".detail-panel-area");
+  if (panel) panel.style.borderColor = color || "";
+}
+
+function endHover(container) {
+  clearHovered(container);
+  hideTag();
+  setPanelHighlight(null);
+  if (hoverCol !== null) {
+    hoverCol = null;
+    renderDetailPanel(); // restore the pinned (clicked) turn
+  }
+}
+
+function attachHoverInteractions(container) {
+  // Delegated listeners live on the container (its children are replaced on
+  // every render, the container itself is not) — bind once.
+  if (container.dataset.hoverBound) return;
+  container.dataset.hoverBound = "1";
+
+  container.addEventListener("mouseover", e => {
+    const cell = e.target.closest("[data-col]");
+    const span = e.target.closest("[data-mdp]");
+    if (cell) {
+      const ci = parseInt(cell.dataset.col);
+      const mi = turnToMdp[ci];
+      const reading = semanticReading(ci);
+      container.style.setProperty("--hl", reading.color);
+      clearHovered(container);
+      setHovered(container, [ci], mi, mi < 0);
+      showTag(ci, cell);
+      showCaret(cell, reading.color);
+      setPanelHighlight(reading.color);
+      if (hoverCol !== ci) {
+        hoverCol = ci;
+        renderDetailPanel(); // live preview without moving the pinned turn
+      }
+    } else if (span) {
+      const mi = parseInt(span.dataset.mdp);
+      clearHovered(container);
+      setHovered(container, turnGroups[mi] || [], mi, false);
+      hideTag();
+    }
+  });
+  container.addEventListener("mouseout", e => {
+    if (!container.contains(e.relatedTarget)) {
+      endHover(container);
+    } else if (!e.relatedTarget.closest("[data-col],[data-mdp]")) {
+      endHover(container);
+    }
+  });
+  // Horizontal scrolling inside the wrapper moves the cells too.
+  const wrapper = container.closest(".three-row-wrapper");
+  if (wrapper && !wrapper.dataset.tagScroll) {
+    wrapper.dataset.tagScroll = "1";
+    wrapper.addEventListener("scroll", hideTag, { passive: true });
+  }
 }
 
 // ── Detail panel (state + screenshot zoom) ──
 function renderDetailPanel() {
   const panel = document.getElementById("detail-panel");
 
-  if (activeCol === null) {
+  // Hovered turn previews live; the clicked turn stays pinned underneath.
+  const col = hoverCol !== null ? hoverCol : activeCol;
+
+  if (col === null) {
     panel.innerHTML = `<div class="state-placeholder">Click any column to inspect state and screenshot</div>`;
     return;
   }
 
-  const turn = data.turns[activeCol];
-  const mi = turnToMdp[activeCol];
+  const turn = data.turns[col];
+  const mi = turnToMdp[col];
   const step = mi >= 0 ? mdpSteps[mi] : null;
   const ssPath = `screenshots/${data.task_id}/${data.agent}/turn_${String(turn.step).padStart(3, "0")}.png`;
 
   // Previous state for diff
-  const prevState = activeCol > 0 ? data.turns[activeCol - 1].state : null;
+  const prevState = col > 0 ? data.turns[col - 1].state : null;
   const curState = turn.state;
 
   let html = '<div class="detail-columns">';
@@ -451,9 +617,10 @@ function renderDetailPanel() {
   }
 
   // State fields with diff
+  const previewing = hoverCol !== null && hoverCol !== activeCol;
   html += `<div class="detail-state-header">
     <span class="state-surface">${esc(curState?.surface || "")}</span>
-    <span class="detail-turn-label">Turn ${turn.step}</span>
+    <span class="detail-turn-label">${previewing ? '<span class="preview-chip">preview</span> ' : ""}Turn ${turn.step}</span>
   </div>`;
   html += `<div class="state-tree">`;
   if (curState) {
