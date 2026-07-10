@@ -192,6 +192,23 @@ function render() {
   renderThreeRowTimeline();
   renderDetailPanel();
   renderMetrics();
+  scrollActiveColIntoView();
+}
+
+// Keep the active column visible when stepping through turns
+// (arrow keys or MDP-span clicks can move the selection off-viewport).
+function scrollActiveColIntoView() {
+  if (activeCol === null) return;
+  const wrapper = document.querySelector(".three-row-wrapper");
+  const cell = document.querySelector(`#three-row-timeline [data-col="${activeCol}"]`);
+  if (!wrapper || !cell) return;
+  const w = wrapper.getBoundingClientRect();
+  const c = cell.getBoundingClientRect();
+  const margin = 12;
+  let delta = 0;
+  if (c.left < w.left + margin) delta = c.left - (w.left + margin);
+  else if (c.right > w.right - margin) delta = c.right - (w.right - margin);
+  if (delta) wrapper.scrollBy({ left: delta, behavior: "smooth" });
 }
 
 function renderInstruction() {
@@ -465,6 +482,9 @@ function payloadSummary(step) {
   if (p.listing_id) return p.listing_id;
   if (p.repo_id) return p.repo_id;
   if (p.event_id) return p.event_id;
+  if (p.thread_id) return p.thread_id;
+  if (p.message_id) return p.message_id;
+  if (p.folder) return p.folder;
   if (p.field) return `${p.field}: ${p.value}`;
   if (p.check_in) return p.check_in;
   if (p.sort_field) return p.sort_field;

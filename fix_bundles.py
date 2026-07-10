@@ -16,6 +16,7 @@ Run AFTER prepare_data.py + patch_data.py.
 import json
 import subprocess
 from bisect import bisect_right
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -53,23 +54,15 @@ def load_prepatch(rel_path):
     return json.loads(txt)
 
 
-def remap_metrics(bundle, rel_path):
+def remap_metrics(bundle, old, kept):
     """Rebuild the trajectory-indexed process_metrics fields from the
     pre-patch bundle. Returns True if anything changed."""
-    old = load_prepatch(rel_path)
     old_mdp = old["mdp_trajectory"]
-    kept = kept_indices(old_mdp)
-
-    new_mdp = bundle["mdp_trajectory"]
-    assert len(kept) == len(new_mdp), f"{rel_path}: kept {len(kept)} != current {len(new_mdp)}"
-    for ki, step in zip(kept, new_mdp):
-        assert old_mdp[ki]["action"] == step["action"], f"{rel_path}: action mismatch at old idx {ki}"
-
     m = bundle["process_metrics"]
     old_m = old["process_metrics"]
     old_cov = old_m["coverage_trajectory"]
     assert old_m["total_steps"] == len(old_mdp) + 1 == len(old_cov), \
-        f"{rel_path}: pre-patch metrics already inconsistent"
+        "pre-patch metrics already inconsistent"
 
     # State s follows action s-1; a state after a dropped action collapses
     # onto the state after the last surviving action before it.
@@ -146,28 +139,105 @@ def diff_keys(a, b):
 
 
 def state_boundaries(turns):
-    """[(turn_index, changed_keys)] where the state differs from the previous
-    turn. A boundary at turn i closes the group of turns ending at i-1."""
+    """[(turn_index, changed_keys, post_state)] where the state differs from
+    the previous turn. A boundary at turn i closes the group of turns ending
+    at i-1; post_state is the state the transition produced."""
     out = []
     for i in range(1, len(turns)):
-        d = diff_keys(turns[i - 1].get("state") or {}, turns[i].get("state") or {})
+        state = turns[i].get("state") or {}
+        d = diff_keys(turns[i - 1].get("state") or {}, state)
         if d:
-            out.append((i, d))
+            out.append((i, d, state))
     return out
 
 
-def align_mdp_to_boundaries(mdp, boundaries):
+def postcondition(step, state):
+    """Does `state` look like the state this MDP action produces? Returns
+    True/False, or None when the bundle's slimmed state can't tell. Needed
+    because e.g. ViewListing and CloseListing change the SAME keys
+    (surface/back_stack) and only the resulting value tells them apart."""
+    a, p = step["action"], step.get("payload") or {}
+    surf = state.get("surface")
+    if a == "ViewListing":
+        return surf == "ListingDetail"
+    if a == "CloseListing":
+        return surf != "ListingDetail"
+    if a == "OpenThread":
+        return surf == "ThreadView"
+    if a == "CloseThread":
+        return surf != "ThreadView"
+    if a == "ViewRepo":
+        return surf == "RepoDetail"
+    if a == "BookListing":
+        return surf == "Checkout"
+    if a in ("Search", "SearchEmails", "SearchRepos"):
+        q = p.get("query")
+        key = "repo_search_query" if a == "SearchRepos" else "search_query"
+        return None if q is None else state.get(key) == q
+    if a == "ClearSearch":
+        return not state.get("search_query")
+    if a == "SortBy":
+        return state.get("sort_by") == p.get("sort_field") if p.get("sort_field") else None
+    if a == "SwitchFolder":
+        return state.get("active_folder") == p.get("folder") if p.get("folder") else None
+    if a == "SetBookingField":
+        f = p.get("field")
+        return state.get(f"booking_{f}") == p.get("value") if f else None
+    if a == "SetFilter":
+        field, val = p.get("filter_field"), p.get("filter_value")
+        filters = state.get("filters")
+        if not field or val is None or not isinstance(filters, dict):
+            return None
+        cur = filters.get(field)
+        if isinstance(cur, list) and isinstance(val, list):
+            return set(map(str, val)) <= set(map(str, cur))
+        return cur == val
+    return None
+
+
+# A dropped entry dispatched within this window of its predecessor came from
+# the same GUI turn (double-dispatch bug); a larger gap means the agent
+# re-dispatched it with a separate click and that turn must be attributed.
+SAME_TURN_GAP_S = 1.0
+
+
+def parse_ts(step):
+    return datetime.fromisoformat(step["timestamp"].replace("Z", "+00:00"))
+
+
+def classify_dropped(old_mdp, kept):
+    """Split dropped indices into same-turn double-fires (consume no GUI turn)
+    and separate-turn re-dispatches (consume one GUI turn)."""
+    kept_set = set(kept)
+    same_turn, separate = set(), set()
+    for i in range(len(old_mdp)):
+        if i in kept_set:
+            continue
+        gap = (parse_ts(old_mdp[i]) - parse_ts(old_mdp[i - 1])).total_seconds() if i else None
+        (same_turn if gap is not None and gap <= SAME_TURN_GAP_S else separate).add(i)
+    return same_turn, separate
+
+
+def align_mdp_to_boundaries(mdp, boundaries, same_turn=frozenset(), separate=frozenset()):
     """Needleman-Wunsch style alignment between MDP entries and state-change
     boundaries. Returns matches[k] = boundary index or None (silent entry).
     Handles both extra boundaries (state changes with no MDP record) and
-    silent MDP entries (no visible state change)."""
+    silent MDP entries (no visible state change). Dropped double-fires
+    (`same_turn`) re-dispatch a state the surviving entry already produced,
+    so they never win a boundary; dropped separate re-dispatches (`separate`)
+    prefer staying silent but may match if they visibly changed state."""
     m, n = len(mdp), len(boundaries)
     NEG = float("-inf")
     dp = [[NEG] * (n + 1) for _ in range(m + 1)]
     back = [[None] * (n + 1) for _ in range(m + 1)]
     dp[0][0] = 0.0
 
-    def skip_penalty(action):
+    def skip_penalty(k):
+        if k in same_turn:
+            return 0.0          # double-fire: always silent
+        if k in separate:
+            return -0.05        # re-dispatch: expected to be silent
+        action = mdp[k]["action"]
         exp = EXPECTED_KEYS.get(action)
         if exp is not None and not exp:
             return 0.0          # no observable key at all
@@ -183,12 +253,21 @@ def align_mdp_to_boundaries(mdp, boundaries):
             if k < m:
                 exp = EXPECTED_KEYS.get(mdp[k]["action"])
                 if j < n:
-                    keys = boundaries[j][1]
+                    keys, post_state = boundaries[j][1], boundaries[j][2]
                     sc = 1.0 if exp is None else (3.0 if keys & exp else -4.0)
+                    post = postcondition(mdp[k], post_state)
+                    if post is True:
+                        sc += 2.0
+                    elif post is False:
+                        sc -= 6.0   # resulting state contradicts the action
+                    if k in same_turn:
+                        sc = -10.0  # its state change belongs to the original
+                    elif k in separate:
+                        sc -= 0.5   # prefer giving the boundary to a kept entry
                     if cur + sc > dp[k + 1][j + 1]:
                         dp[k + 1][j + 1] = cur + sc
                         back[k + 1][j + 1] = ("M", k, j)
-                pen = skip_penalty(mdp[k]["action"])
+                pen = skip_penalty(k)
                 if cur + pen > dp[k + 1][j]:
                     dp[k + 1][j] = cur + pen
                     back[k + 1][j] = ("S", k, j)
@@ -206,28 +285,46 @@ def align_mdp_to_boundaries(mdp, boundaries):
     return matches
 
 
-def compute_turn_to_mdp(bundle):
-    turns, mdp = bundle["turns"], bundle["mdp_trajectory"]
+def compute_turn_to_mdp(bundle, old_mdp, kept):
+    """Align the ORIGINAL (pre-patch) trajectory to the turn boundaries, then
+    fold dropped entries onto their surviving neighbours. Aligning the patched
+    trajectory directly would misattribute the turns of deduped double-fires:
+    e.g. gmail/fara's search-button click re-dispatched an identical
+    SearchEmails (deduped away) and must stay with the surviving SearchEmails,
+    not leak into the following OpenThread span."""
+    turns, new_mdp = bundle["turns"], bundle["mdp_trajectory"]
     turn_to_mdp = [-1] * len(turns)
-    if not mdp or not turns:
+    if not new_mdp or not turns:
         return turn_to_mdp
 
     boundaries = state_boundaries(turns)
-    matches = align_mdp_to_boundaries(mdp, boundaries)
+    same_turn, separate = classify_dropped(old_mdp, kept)
+    matches = align_mdp_to_boundaries(old_mdp, boundaries, same_turn, separate)
 
+    old_map = [-1] * len(turns)
     pos = 0
-    for k in range(len(mdp)):
+    for k in range(len(old_mdp)):
         if matches[k] is not None:
             end = max(boundaries[matches[k]][0] - 1, pos)
             for t in range(pos, min(end + 1, len(turns))):
-                turn_to_mdp[t] = k
+                old_map[t] = k
             pos = end + 1
+        elif k in same_turn:
+            # Double-fire from the same GUI turn as its original: no turn.
+            continue
         elif pos < len(turns):
-            # Silent transition: attribute a single turn to it.
-            turn_to_mdp[pos] = k
+            # Silent transition with its own GUI turn: attribute one turn.
+            old_map[pos] = k
             pos += 1
     for t in range(pos, len(turns)):
-        turn_to_mdp[t] = len(mdp) - 1
+        old_map[t] = len(old_mdp) - 1
+
+    # Fold original indices onto surviving entries. A dedup-dropped duplicate
+    # folds onto the kept entry it repeated (the previous kept index); a
+    # dropped leading entry folds forward onto the first kept one.
+    for t, k in enumerate(old_map):
+        if k >= 0:
+            turn_to_mdp[t] = min(max(bisect_right(kept, k) - 1, 0), len(new_mdp) - 1)
     return turn_to_mdp
 
 
@@ -238,9 +335,17 @@ def main():
         rel = bundle_path.relative_to(ROOT).as_posix()
         bundle = json.loads(bundle_path.read_text())
 
-        metrics_changed = remap_metrics(bundle, rel)
+        old = load_prepatch(rel)
+        old_mdp = old["mdp_trajectory"]
+        kept = kept_indices(old_mdp)
+        assert len(kept) == len(bundle["mdp_trajectory"]), \
+            f"{rel}: kept {len(kept)} != current {len(bundle['mdp_trajectory'])}"
+        for ki, step in zip(kept, bundle["mdp_trajectory"]):
+            assert old_mdp[ki]["action"] == step["action"], f"{rel}: action mismatch at old idx {ki}"
 
-        t2m = compute_turn_to_mdp(bundle)
+        metrics_changed = remap_metrics(bundle, old, kept)
+
+        t2m = compute_turn_to_mdp(bundle, old_mdp, kept)
         mapping_changed = bundle.get("turn_to_mdp") != t2m
         bundle["turn_to_mdp"] = t2m
 
