@@ -188,10 +188,22 @@ a:hover { text-decoration: underline; }
 
 /* ── Three-row timeline ── */
 .three-row-wrapper {
-  overflow-x: auto; margin-bottom: 20px;
-  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
   background: var(--bg);
 }
+
+/* Static summary bar attached under the timeline box (outside the scroll) */
+#timeline-summary {
+  text-align: center; font-size: 0.82rem;
+  color: var(--text-muted); padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  margin-bottom: 20px;
+}
+#timeline-summary:empty { display: none; }
 
 .tr-scroll { padding: 0; }
 
@@ -368,18 +380,6 @@ a:hover { text-decoration: underline; }
 
 .metric-idle { color: var(--text-muted); font-size: 0.78rem; }
 
-/* Summary line — the text stays pinned in view while the timeline scrolls */
-.tr-summary {
-  display: flex; justify-content: center;
-  font-size: 0.82rem;
-  color: var(--text-muted); padding: 10px;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
-}
-.tr-summary-inner {
-  position: sticky; left: 16px; right: 16px;
-  text-align: center;
-}
 
 /* ── Detail panel ── */
 .detail-panel-area {
