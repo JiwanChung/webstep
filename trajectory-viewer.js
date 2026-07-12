@@ -383,13 +383,14 @@ function renderThreeRowTimeline() {
     <span class="tr-endpoint">S<sub>end</sub></span>
   </div></div>`;
 
-  // ── Summary line ──
+  // ── Summary line: spans the scroll content, with the text in a sticky
+  //    inner span so it stays pinned in view during horizontal scrolling ──
   const totalGui = turns.filter(t => t.action?.action).length;
   const idleTurns = turns.length - totalGui;
-  html += `<div class="tr-summary">
+  html += `<div class="tr-summary"><span class="tr-summary-inner">
     Semantic trace &tau; = (s<sub>0</sub>, a<sub>0</sub>, &hellip; s<sub>${mdpSteps.length}</sub>)
     | ${totalGui} GUI actions${idleTurns > 0 ? ` (+${idleTurns} idle)` : ""} -> ${mdpSteps.length} semantic transitions
-  </div>`;
+  </span></div>`;
 
   html += `</div>`; // end tr-scroll
 
