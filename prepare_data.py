@@ -33,7 +33,9 @@ def slim_state(state: dict) -> dict:
         if k in HEAVY_STATE_KEYS:
             continue
         if isinstance(v, list) and len(v) > 10:
-            out[k] = f"[{len(v)} items]"
+            # Keep the leading items so the viewer can render a truncated
+            # preview; counts are available via fields like total_results.
+            out[k] = v[:3] + [f"… +{len(v) - 3} more"]
         elif isinstance(v, dict) and len(json.dumps(v)) > 500:
             out[k] = f"{{{len(v)} keys}}"
         else:
