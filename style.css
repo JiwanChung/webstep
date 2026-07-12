@@ -365,6 +365,17 @@ a:hover { text-decoration: underline; }
   border-radius: 999px; padding: 1px 7px; margin-right: 6px;
 }
 
+/* Terminal outcome capsule under the final done turn */
+.tr-mdp-outcome {
+  position: absolute; top: 6px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px; border: 1.5px solid;
+  font-size: 0.74rem; font-weight: 700;
+  box-sizing: border-box;
+}
+.tr-mdp-outcome.ok   { color: var(--success); border-color: var(--success); background: var(--success-bg); }
+.tr-mdp-outcome.fail { color: var(--failure); border-color: var(--failure); background: var(--failure-bg); }
+
 .tr-mdp-empty {
   display: flex; align-items: center; height: 52px; padding: 0 14px;
   font-size: 0.78rem; font-style: italic; color: var(--text-muted);

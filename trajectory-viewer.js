@@ -359,6 +359,17 @@ function renderThreeRowTimeline() {
     </div>`;
   }
 
+  // Terminal outcome capsule under the final "done" turn: the episode's
+  // verdict closes the MDP record row.
+  if (lastTurn && !lastTurn.action?.action && lastTurn.final_response) {
+    const ok = data.outcome === "success";
+    html += `<div class="tr-mdp-outcome ${ok ? "ok" : "fail"}"
+      style="left:${(turns.length - 1) * COL_W}px;width:${COL_W}px;"
+      title="terminal outcome: ${ok ? "success" : "failure"}">
+      <i class="fas ${ok ? "fa-check" : "fa-xmark"}"></i>&nbsp;${ok ? "success" : "failure"}
+    </div>`;
+  }
+
   for (const span of mdpSpans) {
     const step = mdpSteps[span.mdpIdx];
     const left = span.startCol * COL_W;
@@ -443,6 +454,13 @@ function hideTag() {
 
 // Semantic reading of a turn: its transition's family color + label text.
 function semanticReading(ci) {
+  const turn = data.turns[ci];
+  if (turn && !turn.action?.action && turn.final_response) {
+    const ok = data.outcome === "success";
+    return ok
+      ? { color: "#10b981", bg: "#ecfdf5", fg: "#10b981", text: "episode end — success" }
+      : { color: "#ef4444", bg: "#fef2f2", fg: "#ef4444", text: "episode end — failure" };
+  }
   const mi = turnToMdp[ci];
   if (mi >= 0 && mdpSteps[mi]) {
     const step = mdpSteps[mi];
