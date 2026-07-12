@@ -716,17 +716,7 @@ function payloadSummary(step) {
 function formatVal(v) {
   if (v === undefined) return "";
   if (v === null) return "null";
-  if (Array.isArray(v)) {
-    // Long lists: show the leading items, elide the rest (counts live in
-    // fields like total_results anyway).
-    const MAX = 3;
-    const items = v.slice(0, MAX).map(x => typeof x === "object" ? JSON.stringify(x) : String(x));
-    return `[${items.join(", ")}${v.length > MAX ? ", …" : ""}]`;
-  }
   if (typeof v === "object") return JSON.stringify(v);
-  // "[59 items]" placeholders from the data export: the ids were dropped at
-  // export time, so elide rather than repeat the count.
-  if (typeof v === "string" && /^\[\d+ items\]$/.test(v)) return "[…]";
   return String(v);
 }
 
