@@ -710,10 +710,13 @@ a:hover { text-decoration: underline; }
   gap: 16px; max-width: 1080px; margin: 0 auto;
 }
 .overview-card {
+  display: block; text-decoration: none; color: inherit;
+  position: relative;
   background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
-  padding: 22px 20px;
-  transition: box-shadow 180ms ease, transform 180ms ease;
+  padding: 22px 20px 46px;
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
 }
+.overview-card:hover { text-decoration: none; border-color: hsl(204, 86%, 78%); }
 .overview-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
@@ -745,10 +748,12 @@ a:hover { text-decoration: underline; }
   gap: 18px; max-width: 1080px; margin: 0 auto 8px;
 }
 .method-step {
-  position: relative; padding: 20px 20px 20px 62px;
+  display: block; text-decoration: none; color: inherit;
+  position: relative; padding: 20px 20px 46px 62px;
   background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
-  transition: box-shadow 180ms ease, transform 180ms ease;
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
 }
+.method-step:hover { text-decoration: none; border-color: hsl(204, 86%, 78%); }
 .method-step:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
@@ -1223,3 +1228,20 @@ footer { padding: 24px; text-align: center; font-size: 0.85rem; color: var(--tex
   margin-top: 14px; color: #e2e8f0; font-size: 0.95rem;
   font-family: 'Google Sans', 'Noto Sans', sans-serif;
 }
+
+
+/* Card call-to-action (cards link to the demo / findings) */
+.card-cta {
+  position: absolute; left: 0; bottom: 16px;
+  padding-left: inherit;
+  font-size: 0.78rem; font-weight: 600; color: var(--accent);
+  opacity: 0; transform: translateY(3px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.method-step .card-cta { left: 62px; }
+.overview-card .card-cta { left: 20px; }
+.card-cta i { margin-left: 4px; transition: transform 180ms ease; }
+.method-step:hover .card-cta,
+.overview-card:hover .card-cta { opacity: 1; transform: none; }
+.method-step:hover .card-cta i,
+.overview-card:hover .card-cta i { transform: translateX(3px); }
