@@ -1,0 +1,577 @@
+[
+ {
+  "domain": "Mail",
+  "templates": [
+   {
+    "name": "Find Email Extract",
+    "count": 30,
+    "example": "Priya Patel has sent you several similar emails. Find the one that mentions \"ProjectAlpha006\" in its body and star it."
+   },
+   {
+    "name": "Compare Threads",
+    "count": 30,
+    "example": "Look at your emails among your unread emails. Find the one with the most CC recipients and open it."
+   },
+   {
+    "name": "Compose Reply",
+    "count": 30,
+    "example": "Find the email from Ryan Thompson about \"Re: Flight confirmation\" and reply with the following message: \"Good to hear! Let me loop in the team for their input on this.\""
+   },
+   {
+    "name": "Count Compute",
+    "count": 30,
+    "example": "Which folder has more emails: Finance or Personal? Switch to the folder with more."
+   },
+   {
+    "name": "Find by Content",
+    "count": 30,
+    "example": "Find and open the email that mentions \"ProjectAlpha028\" in its body."
+   },
+   {
+    "name": "Organize Email",
+    "count": 30,
+    "example": "Archive the email from Olivia Martinez about \"Follow up: Contract renewal\"."
+   }
+  ]
+ },
+ {
+  "domain": "Calendar",
+  "templates": [
+   {
+    "name": "Find Event Extract",
+    "count": 30,
+    "example": "Open the \"Dinner at Carol's\" event on Friday, March 13 to view its details."
+   },
+   {
+    "name": "Compare Events",
+    "count": 30,
+    "example": "On Monday, March 16, find the event with the fewest attendees and open it."
+   },
+   {
+    "name": "Schedule Meeting",
+    "count": 30,
+    "example": "Create a 30-minute meeting titled \"Sprint Demo\" on Monday, March 9 in the first available slot between 9 AM and 5 PM. Add it to the Personal calendar."
+   },
+   {
+    "name": "Count Compute",
+    "count": 30,
+    "example": "Which day has more events: Thursday, March 12 or Friday, March 20? Navigate to that day in day view."
+   },
+   {
+    "name": "Find Conflict",
+    "count": 30,
+    "example": "On Wednesday, March 18, find the event that overlaps with 7 PM to 8 PM and open it."
+   },
+   {
+    "name": "Edit Event",
+    "count": 30,
+    "example": "On Monday, March 16, there are multiple \"Standup with Alice\" events. Find the one whose description mentions \"Customer onboarding walkthrough\" and change its title to \"New Review Session\"."
+   }
+  ]
+ },
+ {
+  "domain": "Shopping",
+  "templates": [
+   {
+    "name": "Find Product Extract",
+    "count": 30,
+    "example": "Search for camping in Sports & Outdoors. Find the one with Weight: \"0.3 lbs\" and add it to your cart."
+   },
+   {
+    "name": "Compare Products",
+    "count": 30,
+    "example": "Search for exercise equipment in Sports & Outdoors. Among the results, find the product with the longest warranty and add it to your cart."
+   },
+   {
+    "name": "Purchase Product",
+    "count": 30,
+    "example": "Buy the cheapest cycling. Complete the full checkout process."
+   },
+   {
+    "name": "Count Compute",
+    "count": 30,
+    "example": "Which category has more products on sale: 'Camping' or 'Team Sports'? Search for that category and open the first result."
+   },
+   {
+    "name": "Find by Spec",
+    "count": 30,
+    "example": "Search for children's books in Books. Find the product with Compatible Devices: \"iOS/Android\" and open it."
+   },
+   {
+    "name": "Cart Management",
+    "count": 30,
+    "example": "Add the LG Classic Sports Bra and the Bose Advanced Classic Game to your cart. Then remove the LG Classic Sports Bra from the cart."
+   }
+  ]
+ },
+ {
+  "domain": "Accommodation",
+  "templates": [
+   {
+    "name": "Search Filter Book",
+    "count": 15,
+    "example": "Book the cheapest condo in Seattle that has a Pool for 3 guests, April 14-17."
+   },
+   {
+    "name": "Detail Cancellation Book",
+    "count": 15,
+    "example": "Book the highest-rated listing in Miami that has a flexible cancellation policy, for 3 guests, April 28-29. You'll need to check the detail page of each listing to see its cancellation policy."
+   },
+   {
+    "name": "Detail Amenity Book",
+    "count": 15,
+    "example": "Find the cheapest listing in Asheville that has a Dishwasher and book it for 3 guests, April 17-20. Check each listing's detail page to verify the amenity."
+   },
+   {
+    "name": "Compare Price Total",
+    "count": 15,
+    "example": "Book the listing in Los Angeles with the lowest total cost (including cleaning fee and service fee) for a 4-night stay, 3 guests, April 14-17. You'll need to open each listing to see the full cost breakdown."
+   },
+   {
+    "name": "Host Superhost Book",
+    "count": 15,
+    "example": "Find the cheapest listing in New York that is hosted by a Superhost and book it for 1 guest, April 18-22. Check each listing's detail page to see host information."
+   },
+   {
+    "name": "Sleeping Arrangement Book",
+    "count": 15,
+    "example": "Find the cheapest listing in San Diego that has a Queen bed and book it for 3 guests, April 15-17. You'll need to check each listing's sleeping arrangements on the detail page."
+   },
+   {
+    "name": "Highest Rated Book",
+    "count": 15,
+    "example": "Book the highest-rated cabin in Asheville for 3 guests, April 25-27."
+   },
+   {
+    "name": "Book Then Cancel",
+    "count": 15,
+    "example": "Book the listing \"Luxurious Cottage in Gaslamp Quarter\" in San Diego for 2 guests, April 16-20, and then cancel the reservation."
+   },
+   {
+    "name": "Location Amenity Combo",
+    "count": 15,
+    "example": "Find the cheapest listing in Seattle that has both a Free parking and an EV charger, then book it for 3 guests, April 14-17. The ev charger can only be confirmed on the detail page."
+   },
+   {
+    "name": "View Detail Only",
+    "count": 15,
+    "example": "Find the highest-rated house in Chicago that has a moderate cancellation policy and open its detail page. You'll need to check each listing to see its cancellation policy."
+   },
+   {
+    "name": "Paginate Cheapest Book",
+    "count": 15,
+    "example": "Book the cheapest listing in Asheville for 2 guests, April 22-24. You may need to check additional pages of results or sort by price."
+   },
+   {
+    "name": "Multi Constraint Book",
+    "count": 15,
+    "example": "Book the cheapest listing in Miami with at least 2 beds, a flexible cancellation policy, and a Fireplace, for 4 guests, April 13-17. Check detail pages to verify cancellation policy and amenities."
+   }
+  ]
+ },
+ {
+  "domain": "Food Delivery",
+  "templates": [
+   {
+    "name": "Search Order Simple",
+    "count": 12,
+    "example": "Search for \"urban\" and find Urban Place. Order the Daily Special from there."
+   },
+   {
+    "name": "Cuisine Filter Order",
+    "count": 12,
+    "example": "Filter restaurants by Vietnamese cuisine. From Urban Eatery, order the Bo Luc Lac."
+   },
+   {
+    "name": "Compare Restaurants Detail",
+    "count": 12,
+    "example": "Among Indian restaurants, find the one with free delivery. Open that restaurant."
+   },
+   {
+    "name": "Menu Dietary Detail",
+    "count": 12,
+    "example": "Go to Pearl Bowl and find a Dairy-Free menu item by checking the item details. Add it to your cart."
+   },
+   {
+    "name": "Cheapest Item",
+    "count": 12,
+    "example": "Go to Red Tandoor and order the cheapest Desserts item. Complete the full checkout."
+   },
+   {
+    "name": "Highest Rated Cuisine",
+    "count": 12,
+    "example": "Find the highest-rated Mexican restaurant and open it."
+   },
+   {
+    "name": "Multi Item Order",
+    "count": 12,
+    "example": "Go to Blue House. Add both Fish and Chips and Pulled Pork Sandwich to your cart, then place the order."
+   },
+   {
+    "name": "Fastest Delivery",
+    "count": 12,
+    "example": "Among Greek restaurants, find the one with the fastest delivery time and open it."
+   },
+   {
+    "name": "Dietary Restriction Order",
+    "count": 12,
+    "example": "Find a Middle Eastern restaurant that offers Vegetarian options. Then check the menu item details to find one that is truly Vegetarian and order it."
+   },
+   {
+    "name": "Filter Detail Combo",
+    "count": 12,
+    "example": "Filter by Pizza cuisine. Find a restaurant with a minimum order under $15 (check restaurant details). Order the Sweet Dessert from that restaurant."
+   },
+   {
+    "name": "Compare Menu Prices",
+    "count": 12,
+    "example": "Compare Rice Dishes prices between Dragon House and Grand Taqueria. Order from the restaurant with the cheaper option."
+   },
+   {
+    "name": "Modify Cart Order",
+    "count": 12,
+    "example": "Go to Ivory Garden. Add Crispy Appetizer and Grilled Platter to your cart. Then change the quantity of Grilled Platter to 4 and place the order."
+   },
+   {
+    "name": "Calorie Conscious",
+    "count": 12,
+    "example": "Go to Dragon House and find a menu item with fewer than 400 calories by checking item details. Add it to your cart."
+   },
+   {
+    "name": "Allergen Check",
+    "count": 12,
+    "example": "Go to Pearl Tandoor and find a menu item that does not contain Wheat by checking item details. Add it to your cart."
+   },
+   {
+    "name": "Free Delivery Order",
+    "count": 12,
+    "example": "Find a restaurant that offers free delivery and order the Satay Skewers from Sweet Bowl."
+   }
+  ]
+ },
+ {
+  "domain": "Housing",
+  "templates": [
+   {
+    "name": "Open House Find",
+    "count": 15,
+    "example": "Search for properties in Brookfield. Find the one with an upcoming open house on 2026-03-25 and schedule a tour for 2026-03-20."
+   },
+   {
+    "name": "Investment Analysis",
+    "count": 15,
+    "example": "Search for 4+ bedroom properties in Springfield. Compare the investment potential and save the one with no flood zone risk and the best energy rating."
+   },
+   {
+    "name": "Compare Properties",
+    "count": 15,
+    "example": "Find 4-bedroom properties in Brookfield, compare the options, and save the one with the lowest 2025 property tax."
+   },
+   {
+    "name": "School Based",
+    "count": 15,
+    "example": "Find a 2+ bedroom property in Maplewood near a elementary school rated 9/10 or higher and save it."
+   },
+   {
+    "name": "Property History",
+    "count": 15,
+    "example": "Search for properties in Greenville. Find the one with a price reduction in its history and save it to your favorites."
+   },
+   {
+    "name": "Neighborhood Search",
+    "count": 15,
+    "example": "Search for 5+ bedroom properties in Summit. Find the one that has a screened porch in its exterior features and save it."
+   },
+   {
+    "name": "Agent Contact",
+    "count": 15,
+    "example": "Look for properties in Oakdale. Find one that has a virtual tour available and send a message to its listing agent."
+   },
+   {
+    "name": "Search and Save",
+    "count": 15,
+    "example": "Search for properties in Brookfield. Find the condo with 3 garage spaces and save it to your favorites."
+   },
+   {
+    "name": "Comparison Shopping",
+    "count": 15,
+    "example": "Search for 4+ bedroom properties in Riverside. Find the one with a finished basement and at least 2 garage spaces, then save it."
+   },
+   {
+    "name": "Filter and Schedule Tour",
+    "count": 15,
+    "example": "Search for properties in Maplewood with at least 4 bedrooms. Find the one with a slate roof and schedule a tour for 2026-03-20."
+   },
+   {
+    "name": "Price Per Sqft",
+    "count": 15,
+    "example": "Search for 3+ bedroom properties in Oakdale. Compare the price per square foot across listings and save the one with the lowest price per sqft."
+   },
+   {
+    "name": "Complex Filter Detail",
+    "count": 15,
+    "example": "Find a property in Westfield with 3+ bedrooms, under $305,000, that has no flood zone risk and a heat pump. Save it."
+   }
+  ]
+ },
+ {
+  "domain": "Coding QA",
+  "templates": [
+   {
+    "name": "Search Open Question",
+    "count": 15,
+    "example": "Search for \"react\" questions. Find the question titled \"Need help with use dependency injection in using Docker Compose?\" and open it."
+   },
+   {
+    "name": "Tag Filter Open",
+    "count": 15,
+    "example": "Filter questions by the [sql] tag and sort by votes. Open the question with the third highest number of votes."
+   },
+   {
+    "name": "Upvote Answer",
+    "count": 15,
+    "example": "Search for \"spring-boot\". Open the question \"How do I implement middleware in in Java Spring Boot?\" and upvote the answer by cloud_architect."
+   },
+   {
+    "name": "Downvote Answer",
+    "count": 15,
+    "example": "Search for \"react\". Open the question \"Difference between implement a decorator on AWS Lambda?\" and downvote the lowest-voted answer."
+   },
+   {
+    "name": "Accept Answer",
+    "count": 15,
+    "example": "Find your question \"Best practices for use async generators using Next.js?\" and accept the highest-voted answer."
+   },
+   {
+    "name": "Post Answer",
+    "count": 15,
+    "example": "Search for \"rest\". Open the question \"Difference between handle form validation in in Go?\" and post an answer: \"You can solve this by using a try-catch block around the async call.\""
+   },
+   {
+    "name": "Post Comment",
+    "count": 15,
+    "example": "Search for \"async-await\". Open the question \"How to implement rate limiting in with Django REST Framework?\" and add a comment on the answer by go_gopher: \"I had the same issue and this fixed it for me.\""
+   },
+   {
+    "name": "Compare Answers Bookmark",
+    "count": 15,
+    "example": "Among the [html] questions \"Why does implement middleware in with Django REST Framework?\", \"What is the best way to configure CORS in with Django REST Framework?\", \"Error when use environment variables in in Angular?\", find the one whose top answer has the most votes and bookmark it."
+   },
+   {
+    "name": "Sort Questions Open",
+    "count": 15,
+    "example": "Sort tagged [java] questions by activity. Open the first question in the list."
+   },
+   {
+    "name": "Multi Tag Open",
+    "count": 15,
+    "example": "Find a question tagged with both [django] and [css]. Open it."
+   },
+   {
+    "name": "User Profile Open",
+    "count": 15,
+    "example": "Find user data_wrangler's profile. From their recent questions, open \"Is it possible to implement pagination in in C#?\"."
+   },
+   {
+    "name": "Code Pattern Open",
+    "count": 15,
+    "example": "Among [aws] questions, find the one with an answer by bug_hunter that contains \"const\" in its code. Bookmark that question."
+   }
+  ]
+ },
+ {
+  "domain": "Code Repo",
+  "templates": [
+   {
+    "name": "Search and Star",
+    "count": 15,
+    "example": "Search for repositories related to \"security\". Find the repository \"agile-manager\" and star it."
+   },
+   {
+    "name": "Issue Triage Label",
+    "count": 15,
+    "example": "Go to the \"agile-runner\" repository and view its issues. Among the open issues, find the one with milestone \"v2.0\" and add the \"good first issue\" label to it."
+   },
+   {
+    "name": "Issue Triage Close",
+    "count": 15,
+    "example": "Go to the \"fast-cache\" repository and view its open issues. Find the issue assigned to \"rowant24\" and close it."
+   },
+   {
+    "name": "Create Issue",
+    "count": 15,
+    "example": "Search for repositories about \"api\". Go to the \"smart-scraper\" repository and create a new issue titled \"Implement pagination for search results\"."
+   },
+   {
+    "name": "Pr Review Detail",
+    "count": 15,
+    "example": "Go to the \"auto-queue\" repository and view its pull requests. Find the open PR with failing CI and open it."
+   },
+   {
+    "name": "Code Navigation",
+    "count": 15,
+    "example": "Search for \"security\" and filter by TypeScript language. Among the results, find the repository with the most contributors and open it."
+   },
+   {
+    "name": "Fork and Star",
+    "count": 15,
+    "example": "Search for repositories about \"api\". Find the one that supports \"caching layer\" (check the full description) and star it."
+   },
+   {
+    "name": "Compare Repos",
+    "count": 15,
+    "example": "Search for \"microservice\" and filter by Rust language. Compare the results and open the repository with the most open issues."
+   },
+   {
+    "name": "Issue Search Filter",
+    "count": 15,
+    "example": "Go to the \"agile-runner\" repository and view its issues. Filter by the \"performance\" label. Among the filtered issues, find the one with the most thumbs-up reactions and open it."
+   },
+   {
+    "name": "Multi Step Star and Issue",
+    "count": 15,
+    "example": "Search for repositories about \"framework\". Go to \"easy-queue\", star it, then create a new issue titled \"Improve CI/CD pipeline\"."
+   },
+   {
+    "name": "Language Filter Star",
+    "count": 15,
+    "example": "Search for \"web\" and filter by C++ language. Sort by forks and star the one with the most forks."
+   },
+   {
+    "name": "Contributor Based Open",
+    "count": 15,
+    "example": "Search for repositories about \"testing\". Open each one to check, and find the one with the most contributors. Open it."
+   }
+  ]
+ },
+ {
+  "domain": "Job Network",
+  "templates": [
+   {
+    "name": "Job Skills Match",
+    "count": 16,
+    "example": "Search for \"solutions\" jobs. Find the job that lists \"REST APIs\" as a required skill and apply to it."
+   },
+   {
+    "name": "Message Person",
+    "count": 23,
+    "example": "Go to the Network tab and search for \"amazon\". Find the person with \"Product Strategy\" in their skills, view their profile, and send them a message saying \"Hi Mei, I would like to connect regarding a project.\"."
+   },
+   {
+    "name": "Profile Explore",
+    "count": 28,
+    "example": "Go to the Network tab and search for \"berlin\". Find the person who previously worked at \"Meta\" and view their full profile."
+   },
+   {
+    "name": "Network Connect Multiple",
+    "count": 10,
+    "example": "Go to the Network tab and search for \"quantumleap\". Connect with all people who are not already 1st-degree connections."
+   },
+   {
+    "name": "People Search Connect",
+    "count": 19,
+    "example": "Go to the Network tab and search for \"byteforge\". Find the person who has \"Team Leadership\" listed in their skills and send them a connection request."
+   },
+   {
+    "name": "Job Search Apply",
+    "count": 25,
+    "example": "Search for \"machine\" jobs. Find the one that requires \"CI/CD\" as a skill and apply to it."
+   },
+   {
+    "name": "Job Compare Detail",
+    "count": 6,
+    "example": "Search for jobs in \"san francisco\". Compare the results and apply to the one with the largest company size (enterprise)."
+   },
+   {
+    "name": "Job Filter Apply",
+    "count": 22,
+    "example": "Search for \"ux\" jobs, filter by experience level \"entry\". Find the one that requires \"GCP\" and apply to it."
+   },
+   {
+    "name": "Job Salary Compare",
+    "count": 9,
+    "example": "Search for jobs in \"miami\". Sort by salary and find the one with the lowest minimum salary that also offers \"Stock options/RSUs\" as a benefit. Apply to it."
+   },
+   {
+    "name": "Job Save",
+    "count": 7,
+    "example": "Search for \"software\" jobs. Find the one that requires \"Grafana\" and save it."
+   },
+   {
+    "name": "Job Company Criteria",
+    "count": 11,
+    "example": "Search for jobs at \"CloudNine Inc\". Find the one that requires \"Spark\" and apply to it."
+   },
+   {
+    "name": "Multi Job Apply Message",
+    "count": 4,
+    "example": "Search for \"solutions\" jobs, find the one requiring \"GCP\", and apply. Then go to the Network tab, find someone at \"Stellar Labs\", and send them a message saying \"Hi, I just applied for the Solutions Architect position at Stellar Labs. Would love to learn more about the team.\"."
+   }
+  ]
+ },
+ {
+  "domain": "Team Chat",
+  "templates": [
+   {
+    "name": "Send Message",
+    "count": 15,
+    "example": "Go to the #qa channel and send the message: \"Can someone review my pull request?\""
+   },
+   {
+    "name": "Reply to Thread",
+    "count": 15,
+    "example": "In #general, find the message from Indigo Hall that says \"Parking lot construction starts next week. Use alternate ent\". Open its thread and reply: \"I've tested it and everything looks correct.\""
+   },
+   {
+    "name": "React to Message",
+    "count": 15,
+    "example": "In #random, find the message from Drew Kim that says \"Anyone up for board games after work on Friday?\" and add a :pray: reaction to it."
+   },
+   {
+    "name": "Search and Reply",
+    "count": 15,
+    "example": "Search for \"update\" in messages. Find the result from Devon Wilson in #data-science, open its thread, and reply: \"I'll add this to the sprint backlog.\""
+   },
+   {
+    "name": "Pin Message",
+    "count": 15,
+    "example": "In #marketing, find the message from Avery Park that says \"Product-market fit metrics are improving across all segments\" and pin it."
+   },
+   {
+    "name": "Send Dm",
+    "count": 15,
+    "example": "Send a direct message to Drew Lee saying: \"Has anyone tested the new API endpoint?\""
+   },
+   {
+    "name": "Channel Find Message",
+    "count": 15,
+    "example": "Switch to the #data-science channel. Find the message from Cameron Rodriguez that says \"Welcome to the team, @newperson! Excited to have you.\" and open its thread."
+   },
+   {
+    "name": "Thread Read Reply",
+    "count": 15,
+    "example": "In #hiring, find the message from Blake Wilson about \"Lunch and learn: Introduction to ML \u2014 sign up in #social\". Open the thread, read the replies, and respond: \"Noted. I'll update the ticket accordingly.\""
+   },
+   {
+    "name": "Multi Channel Send",
+    "count": 15,
+    "example": "Send \"Can someone review my pull request?\" in #engineering, then send \"Reminder: team standup at 10am tomorrow\" in #general."
+   },
+   {
+    "name": "Edit Message",
+    "count": 15,
+    "example": "You are logged in as Riley O'Brien. In #social, find your message that says \"Anyone up for board games after work on Friday?\" and edit it to say: \"The performance metrics look great this week\""
+   },
+   {
+    "name": "Find Attachment Message",
+    "count": 15,
+    "example": "In #backend, find the message from Avery Thompson that has the file \"incident_postmortem.md\" attached. Open its thread to view details."
+   },
+   {
+    "name": "Search React",
+    "count": 15,
+    "example": "Search for \"watching\" in messages. Find the result from Finley Clark and add a :fire: reaction to it."
+   }
+  ]
+ }
+]

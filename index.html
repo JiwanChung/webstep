@@ -10,18 +10,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<nav class="site-nav">
+  <a class="nav-brand" href="#"><img src="static/favicon.png" alt="">WebStep</a>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#trajectory-demo">Demo</a>
+    <a href="#benchmark">Benchmark</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#findings">Findings</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+</nav>
 
 <!-- Hero -->
 <section class="hero">
   <div class="container">
     <div class="logo-title-container">
-      <img src="static/logo.png" alt="WebStep logo" class="logo-img">
+      <img src="static/favicon.png" alt="WebStep logo" class="logo-img">
       <h1 class="title">WebStep</h1>
     </div>
     <h2 class="subtitle">Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking</h2>
     <div class="venue-badge">COLM 2026</div>
+    <p class="tldr">Success rates only tell you <em>whether</em> an agent worked. WebStep shows <strong>how it worked</strong> and <strong>where it went wrong</strong> &mdash; a <strong>semantic MDP</strong> records every step, fully automatically.</p>
     <div class="author-block">
       <span class="author"><a href="https://jiwanchung.github.io/">Jiwan Chung</a><sup>1</sup></span>
       <span class="author"><a href="https://jihyuk-byun.github.io/">JiHyuk Byun</a><sup>1</sup></span>
@@ -33,7 +47,7 @@
       <span><sup>2</sup>Microsoft Research</span>
     </div>
     <div class="hero-buttons">
-      <a class="btn" href="https://arxiv.org/pdf/2606.15673"><i class="fas fa-file-pdf"></i> PDF</a>
+      <a class="btn btn-primary" href="https://arxiv.org/pdf/2606.15673"><i class="fas fa-file-pdf"></i> Paper</a>
       <a class="btn" href="https://arxiv.org/abs/2606.15673"><i class="fas fa-file-alt"></i> arXiv</a>
       <a class="btn" href="#"><i class="fab fa-github"></i> Code (coming soon)</a>
       <a class="btn" href="#"><i class="fas fa-database"></i> Dataset (coming soon)</a>
@@ -46,50 +60,72 @@
 <section class="teaser">
   <div class="container bit-narrow">
     <div class="figure-block">
-      <img src="static/figures/fig_method_v2.png" alt="WebStep method overview" class="figure-img"
+      <img src="static/figures/figure1.png" alt="Terminal outcome hides different failures" class="figure-img"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="figure-placeholder" style="display:none;">
-        <i class="fas fa-image"></i><span>Method figure</span>
+        <i class="fas fa-image"></i><span>Teaser figure</span>
       </div>
       <p class="figure-caption">
-        Each website is paired with a semantic MDP that records high-level states and transitions in the background while the agent interacts only with the GUI. This enables automatic process-level analysis without manual annotation.
+        Terminal outcome alone cannot distinguish qualitatively different failures. Two agents both fail the same task, but for entirely different reasons: one fails to locate the target, the other reaches it but executes the wrong action.
       </p>
     </div>
   </div>
 </section>
 
 <!-- Abstract -->
-<section class="abstract-section">
+<section class="abstract-section" id="overview">
   <div class="container">
     <h2 class="section-title">Overview</h2>
     <p class="abstract-lead">
-      We introduce <strong>WebStep</strong>, a benchmark for process-level evaluation of web agents. WebStep contains <strong>1,800 task instances</strong> across 10 self-hosted websites with controlled difficulty, and is designed to move beyond terminal success as the sole measure of performance. Instead of evaluating only whether an agent reaches the correct final outcome, WebStep makes it possible to analyze how agents search, decide, and fail throughout an interaction trajectory.
+      We introduce <strong>WebStep</strong>, a benchmark for <strong>process-level evaluation</strong> of web agents. WebStep contains <strong>1,800 task instances</strong> across <strong>10 self-hosted websites</strong> with controlled difficulty, and is designed to move <strong>beyond terminal success</strong> as the sole measure of performance. Instead of evaluating only whether an agent reaches the correct final outcome, WebStep makes it possible to analyze <strong>how agents search, decide, and fail</strong> throughout an interaction trajectory.
     </p>
-    <ul class="abstract-points">
-      <li>
-        Each website is paired with a <strong>deterministic semantic MDP</strong> that automatically records semantic states and transitions alongside the GUI, with no manual annotation.
-      </li>
-      <li>
-        WebStep shows that <strong>process metrics reveal differences invisible to terminal success</strong>, even among agents with similar overall success rates.
-      </li>
-      <li>
-        It enables fine-grained diagnosis of behavior through exploration reach, execution accuracy, skill invocation, and bifurcation analysis.
-      </li>
-      <li>
-        This yields <strong>actionable insight</strong> into where agents fail, why they fail, and how they should be improved.
-      </li>
-    </ul>
+    <div class="sub-head">How it works</div>
+    <div class="method-steps">
+      <div class="method-step">
+        <span class="ms-num">1</span>
+        <h3>Agents act on the GUI</h3>
+        <p>An agent clicks, types, and scrolls on a real website &mdash; it never sees anything beyond the page itself.</p>
+      </div>
+      <div class="method-step">
+        <span class="ms-num">2</span>
+        <h3>The MDP observer records</h3>
+        <p>The observer converts every raw GUI action into a <strong class="hl">semantic action and state</strong> in MDP space &mdash; <code>click(272, 269)</code> becomes <code>ViewRepo(020)</code> &mdash; with no manual annotation.</p>
+      </div>
+      <div class="method-step">
+        <span class="ms-num">3</span>
+        <h3>Process metrics fall out</h3>
+        <p>From the recorded trace, WebStep computes exploration, skill invocation, and efficiency &mdash; and localizes where a failing trajectory went wrong.</p>
+      </div>
+    </div>
+    <div class="sub-head">What it enables</div>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="oc-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Process metrics</h3>
+        <p>Reveal behavioral differences <strong>invisible to terminal success</strong>, even among agents with similar overall success rates.</p>
+      </div>
+      <div class="overview-card">
+        <div class="oc-icon"><i class="fas fa-microscope"></i></div>
+        <h3>Fine-grained diagnosis</h3>
+        <p>Exploration reach, execution accuracy, skill invocation, and <strong>bifurcation analysis</strong> localize agent behavior.</p>
+      </div>
+      <div class="overview-card">
+        <div class="oc-icon"><i class="fas fa-lightbulb"></i></div>
+        <h3>Actionable insight</h3>
+        <p><strong>Where</strong> agents fail, <strong>why</strong> they fail, and <strong>how</strong> they should be improved.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <hr class="section-divider">
 
+
 <!-- Interactive Trajectory Viewer -->
 <section class="trajectory-section" id="trajectory-demo">
   <div class="container">
     <h2 class="section-title">Automatic Trajectory Analysis</h2>
-    <p class="section-desc">The semantic MDP records states and transitions in the background as the agent interacts with the GUI. Skill labels, coverage, and efficiency are computed from the recorded trajectory with no manual annotation.</p>
-
+    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Live demo &mdash; real agent trajectories, click or hover any step to inspect</p>
     <!-- Trajectory selector -->
     <div class="trajectory-selector">
       <button class="traj-tab active" data-traj="airbnb">Accommodation</button>
@@ -100,28 +136,26 @@
     <!-- Agent selector -->
     <div class="agent-selector" id="agent-tabs"></div>
 
-    <!-- Instruction bar -->
+    <!-- Episode scorecard: task + outcome + episode facts + skill sequence -->
     <div class="instruction-bar">
-      <div class="instruction-label">Task</div>
-      <div class="instruction-text" id="instruction-text"></div>
-      <div class="instruction-meta" id="instruction-meta"></div>
+      <div class="scorecard-top">
+        <div class="instruction-label">Task</div>
+        <div class="instruction-text" id="instruction-text"></div>
+        <div class="instruction-meta" id="instruction-meta"></div>
+      </div>
+      <div class="scorecard-chips" id="episode-chips"></div>
     </div>
 
     <!-- Three-row timeline (Agent sees / Agent does / MDP records) -->
     <div class="three-row-wrapper">
       <div id="three-row-timeline"></div>
     </div>
-    <div id="timeline-summary"></div>
-
+    <div id="timeline-skills"></div>
     <!-- Detail panel (screenshot zoom + state) -->
     <div class="detail-panel-area" id="detail-panel">
       <div class="state-placeholder">Click any column to inspect state and screenshot</div>
     </div>
-
-    <!-- Metrics panel (Exploration / Skill Invocation / Efficiency) -->
-    <div class="metrics-panel" id="metrics-panel">
-      <div class="metrics-grid" id="metrics-grid"></div>
-    </div>
+    <p class="demo-caption">The semantic MDP records states and transitions in the background as the agent interacts with the GUI. Skill labels, coverage, and efficiency are computed from the recorded trajectory with no manual annotation.</p>
 
   </div>
 </section>
@@ -129,29 +163,32 @@
 <hr class="section-divider">
 
 <!-- Benchmark overview -->
-<section class="benchmark-section">
+<section class="benchmark-section" id="benchmark">
   <div class="container">
     <h2 class="section-title">Benchmark Overview</h2>
-    <div class="stats-row">
-      <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Websites</div></div>
-      <div class="stat-card"><div class="stat-number">1,800</div><div class="stat-label">Task Instances</div></div>
-      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Skill Categories</div></div>
-      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Agents Evaluated</div></div>
+    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Interactive &mdash; hover and click to explore</p>
+    <div class="benchmark-flex">
+      <div class="benchmark-chart">
+        <div id="task-sunburst" style="display:none;"></div>
+        <div id="domain-panel" hidden></div>
+        <img src="static/figures/task_sunburst.png" alt="Task distribution across domains" class="figure-img" style="max-width:min(560px, 100%);" onerror="this.style.display='none';">
+      </div>
+      <div class="benchmark-side">
+        <div class="stats-col">
+          <div class="stat-card" data-stat="websites"><div class="stat-number">10</div><div class="stat-label">Websites</div></div>
+          <div class="stat-card" data-stat="tasks"><div class="stat-number">1,800</div><div class="stat-label">Task Instances</div></div>
+          <div class="stat-card" data-stat="skills"><div class="stat-number">5</div><div class="stat-label">Skill Categories</div></div>
+          <div class="stat-card" data-stat="agents"><div class="stat-number">5</div><div class="stat-label">Agents Evaluated</div></div>
+        </div>
+        <div id="stat-detail" hidden></div>
+        <div id="template-detail" hidden></div>
+      </div>
     </div>
-    <div class="domain-grid">
-      <div class="domain-card"><i class="fas fa-envelope"></i><span>Mail</span></div>
-      <div class="domain-card"><i class="fas fa-calendar"></i><span>Calendar</span></div>
-      <div class="domain-card"><i class="fas fa-shopping-cart"></i><span>Shopping</span></div>
-      <div class="domain-card"><i class="fas fa-home"></i><span>Accommodation</span></div>
-      <div class="domain-card"><i class="fas fa-utensils"></i><span>Food Delivery</span></div>
-      <div class="domain-card"><i class="fas fa-building"></i><span>Housing</span></div>
-      <div class="domain-card"><i class="fas fa-code"></i><span>Coding QA</span></div>
-      <div class="domain-card"><i class="fas fa-code-branch"></i><span>Code Repo</span></div>
-      <div class="domain-card"><i class="fas fa-briefcase"></i><span>Job Network</span></div>
-      <div class="domain-card"><i class="fas fa-comments"></i><span>Team Chat</span></div>
-    </div>
-    <div class="figure-block">
-      <img src="static/figures/task_sunburst.png" alt="Task distribution across domains" class="figure-img" style="max-width:min(900px, 100%);" onerror="this.style.display='none';">
+    <div class="sunburst-legend" id="sunburst-legend" hidden>
+      <span><i class="fas fa-arrow-pointer"></i> hover — share &amp; site preview</span>
+      <span><i class="fas fa-magnifying-glass-plus"></i> click a domain — its task templates</span>
+      <span><i class="fas fa-file-lines"></i> hover a template — its example task</span>
+      <span><i class="fas fa-rotate-left"></i> "all domains" — back to the ring</span>
     </div>
   </div>
 </section>
@@ -159,7 +196,7 @@
 <hr class="section-divider">
 
 <!-- Leaderboard -->
-<section class="leaderboard-section">
+<section class="leaderboard-section" id="leaderboard">
   <div class="container">
     <h2 class="section-title">Leaderboard</h2>
     <div class="table-scroll">
@@ -237,7 +274,7 @@
 <hr class="section-divider">
 
 <!-- Key Results -->
-<section class="results-section">
+<section class="results-section" id="findings">
   <div class="container">
     <h2 class="section-title">Key Findings</h2>
     <div class="finding-grid">
@@ -264,8 +301,15 @@
     </div>
     <div class="finding-detail" id="finding-detail">
       <div class="finding-detail-content" data-finding="0">
-        <img src="static/figures/figure1.png" alt="Terminal outcome hides different failures" class="figure-img" onerror="this.style.display='none';">
-        <p class="figure-caption">Terminal outcome alone cannot distinguish qualitatively different failures. Two agents both fail the same task, but for entirely different reasons: one fails to locate the target, the other reaches it but executes the wrong action.</p>
+        <table class="mini-table">
+          <thead><tr><th>Agent</th><th class="mt-same">Terminal (%)</th><th class="mt-diff">Exploration (%)</th><th class="mt-diff">Execution (%)</th></tr></thead>
+          <tbody>
+            <tr><td>UI-TARS-1.5-7B</td><td class="mt-same">32.6</td><td class="mt-diff">46.3</td><td class="mt-diff">50.6</td></tr>
+            <tr><td>GUI-Owl-1.5-8B</td><td class="mt-same">31.9</td><td class="mt-diff">43.6</td><td class="mt-diff">55.6</td></tr>
+            <tr><td>Fara-7B</td><td class="mt-same">31.4</td><td class="mt-diff">43.6</td><td class="mt-diff">55.7</td></tr>
+          </tbody>
+        </table>
+        <p class="figure-caption">Three agents land within a point of each other on terminal success, yet differ visibly in exploration reach and execution accuracy &mdash; differences only process metrics expose.</p>
       </div>
       <div class="finding-detail-content" data-finding="1" style="display:none;">
         <img src="static/figures/fig_model_strengths_v2.png" alt="Skill-level strengths and weaknesses" class="figure-img" onerror="this.style.display='none';">
@@ -286,7 +330,7 @@
 <hr class="section-divider">
 
 <!-- BibTeX -->
-<section class="bibtex-section">
+<section class="bibtex-section" id="bibtex">
   <div class="container">
     <h2 class="section-title">BibTeX</h2>
     <div class="bibtex-block">
@@ -307,7 +351,10 @@
   </div>
 </footer>
 
+<button id="to-top" title="back to top" aria-label="back to top"><i class="fas fa-arrow-up"></i></button>
+
 <script src="trajectory-viewer.js"></script>
+<script src="benchmark-sunburst.js"></script>
 <script>
 // Finding cards
 document.querySelectorAll('.finding-card').forEach(card => {
@@ -320,6 +367,13 @@ document.querySelectorAll('.finding-card').forEach(card => {
   });
 });
 document.querySelector('.finding-card').classList.add('active');
+
+// Go-to-top button
+const toTop = document.getElementById('to-top');
+window.addEventListener('scroll', () => {
+  toTop.classList.toggle('show', window.scrollY > 600);
+}, { passive: true });
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 function copyBibtex() {
   const text = document.getElementById('bibtex-text').textContent;
