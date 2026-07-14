@@ -957,10 +957,16 @@ a:hover { text-decoration: underline; }
 .stat-card:hover { background: rgba(15, 23, 42, 0.045); }
 .stat-card.active { background: var(--accent-light); }
 
-/* Stat detail card (hover previews, click pins) */
-#stat-detail {
-  max-width: 300px; border-top: 1px solid var(--border); padding-top: 16px;
+/* The stat detail and the template example share one reserved slot, so
+   hovering never shifts the column (they are mutually exclusive). */
+.side-detail-area {
+  display: grid; min-height: 210px; max-width: 300px;
+  border-top: 1px solid var(--border); padding-top: 16px;
 }
+.side-detail-area > * { grid-area: 1 / 1; }
+.side-detail-area > *[hidden] { display: block; visibility: hidden; }
+
+#stat-detail { max-width: 300px; }
 #stat-detail > * { animation: tplIn 200ms ease both; }
 .sd-head {
   font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
@@ -984,6 +990,9 @@ a:hover { text-decoration: underline; }
 
 /* Example-instruction card for a clicked template */
 #template-detail { max-width: 300px; }
+.tpl-example {
+  min-height: 108px;
+}
 #template-detail .tpl-head { animation: tplIn 200ms ease both; }
 #template-detail .tpl-example { animation: tplIn 220ms ease 50ms both; }
 @keyframes tplIn {
@@ -1001,6 +1010,7 @@ a:hover { text-decoration: underline; }
   font-size: 0.85rem; line-height: 1.55; color: #4a4a4a;
   background: var(--bg-alt); border: 1px solid var(--border);
   border-radius: 8px; padding: 12px 14px;
+  min-height: 108px;
 }
 .tpl-example-tag {
   display: block; font-size: 0.62rem; font-weight: 700;

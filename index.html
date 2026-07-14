@@ -35,7 +35,7 @@
     </div>
     <h2 class="subtitle">Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking</h2>
     <div class="venue-badge">COLM 2026</div>
-    <p class="tldr">Success rates only tell you <em>whether</em> an agent worked. WebStep shows <strong>how it worked</strong> and <strong>where it went wrong</strong> &mdash; a <strong>semantic MDP</strong> records every step, fully automatically.</p>
+    <p class="tldr">Success rates only tell you <em>whether</em> an agent worked. WebStep shows <strong>how it worked</strong> and <strong>where it went wrong</strong>, by recording every step in a <strong>semantic MDP</strong>, fully automatically.</p>
     <div class="author-block">
       <span class="author"><a href="https://jiwanchung.github.io/">Jiwan Chung</a><sup>1</sup></span>
       <span class="author"><a href="https://jihyuk-byun.github.io/">JiHyuk Byun</a><sup>1</sup></span>
@@ -84,19 +84,19 @@
       <a class="method-step" href="#trajectory-demo">
         <span class="ms-num">1</span>
         <h3>Agents act on the GUI</h3>
-        <p>An agent clicks, types, and scrolls on a real website &mdash; it never sees anything beyond the page itself.</p>
+        <p>An agent clicks, types, and scrolls on a real website. It never sees anything beyond the page itself.</p>
         <span class="card-cta">see it in the demo <i class="fas fa-arrow-right"></i></span>
       </a>
       <a class="method-step" href="#trajectory-demo">
         <span class="ms-num">2</span>
         <h3>The MDP observer records</h3>
-        <p>The observer converts every raw GUI action into a <strong class="hl">semantic action and state</strong> in MDP space &mdash; <code>click(272, 269)</code> becomes <code>ViewRepo(020)</code> &mdash; with no manual annotation.</p>
+        <p>The observer converts every raw GUI action into a <strong class="hl">semantic action and state</strong> in MDP space, so a <code>click(272, 269)</code> becomes <code>ViewRepo(020)</code>. No manual annotation.</p>
         <span class="card-cta">see it in the demo <i class="fas fa-arrow-right"></i></span>
       </a>
       <a class="method-step" href="#trajectory-demo">
         <span class="ms-num">3</span>
         <h3>Process metrics fall out</h3>
-        <p>From the recorded trace, WebStep computes exploration, skill invocation, and efficiency &mdash; and localizes where a failing trajectory went wrong.</p>
+        <p>From the recorded trace, WebStep computes exploration, skill invocation, and efficiency, then localizes where a failing trajectory went wrong.</p>
         <span class="card-cta">see it in the demo <i class="fas fa-arrow-right"></i></span>
       </a>
     </div>
@@ -131,7 +131,7 @@
 <section class="trajectory-section" id="trajectory-demo">
   <div class="container">
     <h2 class="section-title">Automatic Trajectory Analysis</h2>
-    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Live demo &mdash; real agent trajectories, click or hover any step to inspect</p>
+    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Live demo with real agent trajectories. Click or hover any step to inspect</p>
     <!-- Trajectory selector -->
     <div class="trajectory-selector">
       <button class="traj-tab active" data-traj="airbnb">Accommodation</button>
@@ -172,7 +172,7 @@
 <section class="benchmark-section" id="benchmark">
   <div class="container">
     <h2 class="section-title">Benchmark Overview</h2>
-    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Interactive &mdash; hover and click to explore</p>
+    <p class="interactive-chip"><i class="fas fa-hand-pointer"></i>&nbsp; Interactive. Hover and click to explore</p>
     <div class="benchmark-flex">
       <div class="benchmark-chart">
         <div id="task-sunburst" style="display:none;"></div>
@@ -186,15 +186,17 @@
           <div class="stat-card" data-stat="skills"><div class="stat-number">5</div><div class="stat-label">Skill Categories</div></div>
           <div class="stat-card" data-stat="agents"><div class="stat-number">5</div><div class="stat-label">Agents Evaluated</div></div>
         </div>
-        <div id="stat-detail" hidden></div>
-        <div id="template-detail" hidden></div>
+        <div class="side-detail-area">
+          <div id="stat-detail" hidden></div>
+          <div id="template-detail" hidden></div>
+        </div>
       </div>
     </div>
     <div class="sunburst-legend" id="sunburst-legend" hidden>
-      <span><i class="fas fa-arrow-pointer"></i> hover — share &amp; site preview</span>
-      <span><i class="fas fa-magnifying-glass-plus"></i> click a domain — its task templates</span>
-      <span><i class="fas fa-file-lines"></i> hover a template — its example task</span>
-      <span><i class="fas fa-rotate-left"></i> "all domains" — back to the ring</span>
+      <span><i class="fas fa-arrow-pointer"></i> hover for share &amp; site preview</span>
+      <span><i class="fas fa-magnifying-glass-plus"></i> click a domain for its task templates</span>
+      <span><i class="fas fa-file-lines"></i> hover a template for its example task</span>
+      <span><i class="fas fa-rotate-left"></i> "all domains" returns to the ring</span>
     </div>
   </div>
 </section>
@@ -315,7 +317,7 @@
             <tr><td>Fara-7B</td><td class="mt-same">31.4</td><td class="mt-diff">43.6</td><td class="mt-diff">55.7</td></tr>
           </tbody>
         </table>
-        <p class="figure-caption">Three agents land within a point of each other on terminal success, yet differ visibly in exploration reach and execution accuracy &mdash; differences only process metrics expose.</p>
+        <p class="figure-caption">Three agents land within a point of each other on terminal success, yet differ visibly in exploration reach and execution accuracy: differences that only process metrics expose.</p>
       </div>
       <div class="finding-detail-content" data-finding="1" style="display:none;">
         <img src="static/figures/fig_model_strengths_v2.png" alt="Skill-level strengths and weaknesses" class="figure-img" onerror="this.style.display='none';">

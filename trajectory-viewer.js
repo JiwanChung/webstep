@@ -339,8 +339,12 @@ function renderThreeRowTimeline() {
   html += `<div class="tr-row-label">MDP<br>records</div>`;
   html += `<div class="tr-row-content" style="position:relative;height:52px;">`;
 
+  // No semantic transitions at all: hatch the whole row, like a tail region.
   if (mdpSpans.length === 0) {
-    html += `<div class="tr-mdp-empty">No semantic transitions recorded</div>`;
+    const label = `no semantic transitions recorded (${turns.length} turn${turns.length > 1 ? "s" : ""})`;
+    html += `<div class="tr-mdp-tail" style="left:0;width:${turns.length * COL_W}px;" title="${label}">
+      <span class="tr-mdp-tail-label">${label}</span>
+    </div>`;
   }
 
   // Trailing turns that never produced another transition (agent flailing
@@ -385,7 +389,7 @@ function renderThreeRowTimeline() {
 
     html += `<div class="tr-mdp-span ${isActive ? "active" : ""}" data-mdp="${span.mdpIdx}"
       style="left:${left}px;width:${width}px;border-color:${fm.color};background:${fm.bg};">
-      ${isCommit ? `<span class="tr-commit-flag ${outcomeOk ? "ok" : "fail"}" title="the agent committed at this transition${outcomeOk ? "" : " — this is where it went wrong"}">\u2691</span>` : ""}
+      ${isCommit ? `<span class="tr-commit-flag ${outcomeOk ? "ok" : "fail"}" title="the agent committed at this transition${outcomeOk ? "" : ", where it went wrong"}">\u2691</span>` : ""}
       <span class="tr-mdp-action">${esc(step.action)}</span>
       ${detail ? `<span class="tr-mdp-detail">${esc(detail)}</span>` : ""}
     </div>`;
@@ -455,8 +459,8 @@ function semanticReading(ci) {
   if (turn && !turn.action?.action && turn.final_response) {
     const ok = data.outcome === "success";
     return ok
-      ? { color: "#10b981", bg: "#ecfdf5", fg: "#10b981", text: "episode end — success" }
-      : { color: "#ef4444", bg: "#fef2f2", fg: "#ef4444", text: "episode end — failure" };
+      ? { color: "#10b981", bg: "#ecfdf5", fg: "#10b981", text: "episode end (success)" }
+      : { color: "#ef4444", bg: "#fef2f2", fg: "#ef4444", text: "episode end (failure)" };
   }
   const mi = turnToMdp[ci];
   if (mi >= 0 && mdpSteps[mi]) {
@@ -733,7 +737,7 @@ function renderScorecard() {
   const chips = [
     `<span class="ep-chip ${ok ? "ok" : "fail"}">${ok ? "\u2713 PASS" : "\u2717 FAIL"}</span>`,
     ...(fInfo ? [`<span class="ep-chip fail" title="${esc(fInfo[1])}">${esc(fInfo[0])}</span>`] : []),
-    ...(neverCommitted ? [`<span class="ep-chip fail" title="the episode ended without a commit action — e.g., the agent got stuck or timed out">never committed</span>`] : []),
+    ...(neverCommitted ? [`<span class="ep-chip fail" title="the episode ended without a commit action, e.g. the agent got stuck or timed out">never committed</span>`] : []),
     `<span class="ep-chip ${m.info_sufficient ? "ok" : "fail"}" title="did the agent reach the task-relevant target?"><span class="ep-kw">exploration</span>target ${m.info_sufficient ? "found" : "not found"}</span>`,
     `<span class="ep-chip" title="GUI effort vs semantic progress, against the oracle solution"><span class="ep-kw">efficiency</span>${totalGui} GUI${idle ? ` (+${idle} idle)` : ""} \u2192 ${mdpSteps.length} semantic \u00b7 oracle ${data.oracle_trajectory.length} \u00b7 coverage <span class="${m.coverage_at_commit >= 1 ? "cov-ok" : "cov-warn"}">${(m.coverage_at_commit * 100).toFixed(0)}%</span></span>`,
   ];
@@ -753,7 +757,7 @@ function renderScorecard() {
     }
   }
   document.getElementById("timeline-skills").innerHTML =
-    `<span class="skill-chips-label" title="each semantic action the agent invoked, colored by skill family — hover a chip for its measured effect">skill invocation</span>` +
+    `<span class="skill-chips-label" title="each semantic action the agent invoked, colored by skill family. Hover a chip to see its measured effect">skill invocation</span>` +
     (groups.length
       ? groups.map(g => {
           const fm = FAMILY_META[g.family] || FAMILY_META.configuration;

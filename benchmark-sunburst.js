@@ -204,7 +204,7 @@
     requestAnimationFrame(() => container.parentElement.classList.add("zoomed"));
     const cardImg = panel.querySelector(".dp-card img");
     if (cardImg) cardImg.addEventListener("click", () =>
-      openLightbox(cardImg.src, `${d.domain} \u2014 self-hosted benchmark website`));
+      openLightbox(cardImg.src, `${d.domain}, a self-hosted benchmark website`));
     panel.querySelector(".dp-back").addEventListener("click", closeDomain);
     pinnedTplIdx = null;
     panel.querySelectorAll(".tpl-row").forEach(row => {
