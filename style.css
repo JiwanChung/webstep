@@ -1032,6 +1032,10 @@ a:hover { text-decoration: underline; }
     border-left: none; padding-left: 0; margin-left: 0;
     max-width: none; width: 100%;
   }
+  /* No hover on touch: don't reserve the detail slot, it would leave a hole */
+  .side-detail-area { min-height: 0; max-width: none; }
+  .side-detail-area > *[hidden] { display: none; }
+  .side-detail-area:not(:has(> *:not([hidden]))) { border-top: none; padding-top: 0; }
   .stats-col { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px 32px; }
   .stat-card { text-align: center; }
   #template-detail { max-width: none; margin: 0 auto; }
@@ -1255,3 +1259,24 @@ footer { padding: 24px; text-align: center; font-size: 0.85rem; color: var(--tex
 .overview-card:hover .card-cta { opacity: 1; transform: none; }
 .method-step:hover .card-cta i,
 .overview-card:hover .card-cta i { transform: translateX(3px); }
+
+
+/* ── Narrow viewports ── */
+@media (max-width: 640px) {
+  /* Episode chips: let the long efficiency line wrap instead of overflowing */
+  #episode-chips { gap: 4px 0; }
+  .ep-chip { white-space: normal; font-size: 0.8rem; }
+  #episode-chips .ep-chip + .ep-chip {
+    margin-left: 0; padding-left: 0; border-left: none;
+    flex-basis: 100%;
+  }
+  #episode-chips .ep-chip:first-child { flex-basis: auto; }
+  .ep-kw { display: block; margin: 4px 0 1px; }
+
+  .scorecard-top { gap: 8px; }
+  .instruction-meta { white-space: normal; }
+
+  /* Findings mini-table scrolls within its card */
+  .mini-table { min-width: 420px; }
+  .interactive-chip { white-space: normal; text-align: center; }
+}
