@@ -321,7 +321,7 @@
     ["Inspect",         "#8b5cf6", "#f5f3ff"],
     ["Commit",          "#10b981", "#ecfdf5"],
   ];
-  const AGENT_LIST = ["OpenAI CUA", "Qwen3.5-122B", "UI-TARS-1.5-7B", "GUI-Owl-1.5-8B", "Fara-7B"];
+  const AGENT_LIST = ["OpenAI CUA (GPT-5.4)", "Qwen3.5-122B", "UI-TARS-1.5-7B", "GUI-Owl-1.5-8B", "Fara-7B"];
 
   function statDetailHtml(kind) {
     if (kind === "websites") {
