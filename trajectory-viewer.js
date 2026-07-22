@@ -739,7 +739,7 @@ function renderScorecard() {
     `<span class="ep-chip ${ok ? "ok" : "fail"}">${ok ? "\u2713 PASS" : "\u2717 FAIL"}</span>`,
     ...(fInfo ? [`<span class="ep-chip fail" title="${esc(fInfo[1])}">${esc(fInfo[0])}</span>`] : []),
     ...(neverCommitted ? [`<span class="ep-chip fail" title="the episode ended without a commit action, e.g. the agent got stuck or timed out">never committed</span>`] : []),
-    `<span class="ep-chip ${m.info_sufficient ? "ok" : "fail"}" title="did the agent reach the task-relevant target?"><span class="ep-kw">exploration</span>target ${m.info_sufficient ? "found" : "not found"}</span>`,
+    `<span class="ep-chip ${(m.outcome_correct || m.info_sufficient) ? "ok" : "fail"}" title="did the agent reach the task-relevant target? (terminal success implies exploration success, matching the paper)"><span class="ep-kw">exploration</span>target ${(m.outcome_correct || m.info_sufficient) ? "found" : "not found"}</span>`,
     `<span class="ep-chip" title="GUI effort vs semantic progress, against the oracle solution"><span class="ep-kw">efficiency</span>${totalGui} GUI${idle ? ` (+${idle} idle)` : ""} \u2192 ${mdpSteps.length} semantic \u00b7 oracle ${data.oracle_trajectory.length} \u00b7 coverage <span class="${m.coverage_at_commit >= 1 ? "cov-ok" : "cov-warn"}">${(m.coverage_at_commit * 100).toFixed(0)}%</span></span>`,
   ];
   document.getElementById("episode-chips").innerHTML = chips.join("");
