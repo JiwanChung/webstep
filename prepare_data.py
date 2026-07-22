@@ -16,7 +16,7 @@ OUT = Path(__file__).resolve().parent / "data"
 SS_ROOT = Path(__file__).resolve().parent / "screenshots"
 
 DEFAULT_SAMPLES = ["airbnb_0001", "github_0001", "gmail_0001"]
-AGENTS = ["openai_cua", "fara", "guiowl", "uitars", "qwen_vl"]
+AGENTS = ["claude_cua", "openai_cua", "fara", "guiowl", "uitars", "qwen_vl"]
 
 # Large nested objects to drop from per-turn state
 HEAVY_STATE_KEYS = {

@@ -321,7 +321,7 @@
     ["Inspect",         "#8b5cf6", "#f5f3ff"],
     ["Commit",          "#10b981", "#ecfdf5"],
   ];
-  const AGENT_LIST = ["OpenAI CUA (GPT-5.4)", "Qwen3.5-122B", "UI-TARS-1.5-7B", "GUI-Owl-1.5-8B", "Fara-7B"];
+  const AGENT_LIST = ["Claude CUA (claude-sonnet-4-6)", "OpenAI CUA (GPT-5.4)", "Qwen3.5-122B", "UI-TARS-1.5-7B", "GUI-Owl-1.5-8B", "Fara-7B"];
 
   function statDetailHtml(kind) {
     if (kind === "websites") {
@@ -345,7 +345,7 @@
         <p class="sd-note">Every recorded semantic action is automatically labeled with one of these skill families.</p>`;
     }
     if (kind === "agents") {
-      return `<div class="sd-head">5 agents evaluated</div>
+      return `<div class="sd-head">6 agents evaluated</div>
         <ul class="sd-lines">${AGENT_LIST.map(a => `<li>${esc(a)}</li>`).join("")}</ul>`;
     }
     return "";

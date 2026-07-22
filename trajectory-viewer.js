@@ -13,6 +13,7 @@ const SAMPLES = [
 ];
 
 const AGENTS = [
+  { id: "claude_cua", label: "Claude CUA" },
   { id: "openai_cua", label: "OpenAI CUA" },
   { id: "qwen_vl",    label: "Qwen3.5" },
   { id: "uitars",     label: "UI-TARS" },
