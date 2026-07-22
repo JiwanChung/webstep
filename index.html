@@ -223,14 +223,24 @@
       </thead>
       <tbody>
         <tr>
+          <td>Claude CUA (claude-sonnet-4-6)</td>
+          <td class="col-highlight"><strong>84.2</strong></td>
+          <td><strong>88.5</strong></td>
+          <td><strong>87.4</strong></td>
+          <td>70.0</td>
+          <td>14.3</td>
+          <td>9.3</td>
+          <td><strong>1.5</strong></td>
+        </tr>
+        <tr>
           <td>OpenAI CUA (GPT-5.4)</td>
-          <td class="col-highlight"><strong>82.2</strong></td>
-          <td><strong>87.7</strong></td>
-          <td><strong>86.2</strong></td>
+          <td class="col-highlight">82.2</td>
+          <td>87.7</td>
+          <td>86.2</td>
           <td><strong>71.0</strong></td>
           <td>19.7</td>
           <td>10.0</td>
-          <td><strong>2.0</strong></td>
+          <td>2.0</td>
         </tr>
         <tr>
           <td>Qwen3.5-122B</td>
@@ -294,12 +304,12 @@
       <div class="finding-card" data-finding="1">
         <div class="finding-number">2</div>
         <h3>Skill-specific weaknesses</h3>
-        <p>OpenAI CUA beats Qwen3.5 by 23.7% on commits but trails by 15.6% on filtering, within the same domain.</p>
+        <p>Claude CUA leads OpenAI CUA by 29% on Accommodation filtering, yet trails by 14% on Job-Network commits.</p>
       </div>
       <div class="finding-card" data-finding="2">
         <div class="finding-number">3</div>
         <h3>Agent-specific decisive errors</h3>
-        <p>GUI-Owl diverges at filtering; Qwen3.5 at inspection.</p>
+        <p>Claude CUA's wrong branches concentrate at inspection (69%); GUI-Owl uniquely diverges at filtering (29%).</p>
       </div>
       <div class="finding-card" data-finding="3">
         <div class="finding-number">4</div>
@@ -323,7 +333,7 @@
       </div>
       <div class="finding-detail-content" data-finding="1" style="display:none;">
         <img src="static/figures/fig_model_strengths_v2.png" alt="Skill-level strengths and weaknesses" class="figure-img" onerror="this.style.display='none';">
-        <p class="figure-caption">Agents exhibit distinct within-website skill profiles. e.g., on Housing, OpenAI CUA is stronger on commit but weaker on filter, showing that weakness can be concentrated in a specific interaction skill.</p>
+        <p class="figure-caption">Agents exhibit distinct within-website skill profiles. e.g., Claude CUA leads OpenAI CUA by 29% on Accommodation filtering yet trails by 14% on Job-Network commits, showing that weakness can be concentrated in a specific interaction skill. Commit is task-relative: the final task-completing action of each task's oracle trajectory.</p>
       </div>
       <div class="finding-detail-content" data-finding="2" style="display:none;">
         <img src="static/figures/fig_failure_attribution_v2.png" alt="Bifurcation analysis" class="figure-img" onerror="this.style.display='none';">
@@ -331,7 +341,7 @@
       </div>
       <div class="finding-detail-content" data-finding="3" style="display:none;">
         <img src="static/figures/fig_complexity.png" alt="Performance vs. complexity" class="figure-img" onerror="this.style.display='none';">
-        <p class="figure-caption">Exploration success by task complexity. (a) Performance by hard negative count separates OpenAI CUA from others. (b) Oracle trajectory length shows downward trend. (c) Tasks requiring detail-page evidence show different model gaps from list-level tasks.</p>
+        <p class="figure-caption">Exploration success by task complexity. (a) Performance by hard negative count separates the closed models (Claude and OpenAI CUA) from others. (b) Oracle trajectory length shows downward trend. (c) Tasks requiring detail-page evidence show different model gaps from list-level tasks.</p>
       </div>
     </div>
   </div>
