@@ -224,63 +224,63 @@
       <tbody>
         <tr>
           <td>Claude CUA (claude-sonnet-4-6)</td>
-          <td class="col-highlight"><strong>84.2</strong></td>
-          <td><strong>88.5</strong></td>
-          <td><strong>87.4</strong></td>
-          <td>70.0</td>
+          <td class="col-highlight"><strong>85.3</strong></td>
+          <td><strong>91.0</strong></td>
+          <td><strong>93.7</strong></td>
+          <td>96.2</td>
           <td>14.3</td>
           <td>9.3</td>
           <td><strong>1.5</strong></td>
         </tr>
         <tr>
           <td>OpenAI CUA (GPT-5.4)</td>
-          <td class="col-highlight">82.2</td>
-          <td>87.7</td>
-          <td>86.2</td>
-          <td><strong>71.0</strong></td>
+          <td class="col-highlight">82.7</td>
+          <td>89.4</td>
+          <td>92.4</td>
+          <td><strong>96.6</strong></td>
           <td>19.7</td>
           <td>10.0</td>
           <td>2.0</td>
         </tr>
         <tr>
           <td>Qwen3.5-122B</td>
-          <td class="col-highlight">57.9</td>
-          <td>66.1</td>
-          <td>73.7</td>
-          <td>67.7</td>
+          <td class="col-highlight">58.2</td>
+          <td>66.3</td>
+          <td>86.7</td>
+          <td>89.1</td>
           <td>22.1</td>
           <td>9.8</td>
           <td>2.3</td>
         </tr>
         <tr>
           <td>UI-TARS-1.5-7B</td>
-          <td class="col-highlight">32.6</td>
-          <td>46.3</td>
-          <td>50.6</td>
-          <td>62.6</td>
+          <td class="col-highlight">37.1</td>
+          <td>49.2</td>
+          <td>73.9</td>
+          <td>80.0</td>
           <td>35.0</td>
           <td>14.0</td>
           <td>2.5</td>
         </tr>
         <tr>
-          <td>GUI-Owl-1.5-8B</td>
-          <td class="col-highlight">31.9</td>
-          <td>43.6</td>
-          <td>55.6</td>
-          <td>61.9</td>
-          <td>28.3</td>
-          <td>10.4</td>
-          <td>2.7</td>
-        </tr>
-        <tr>
           <td>Fara-7B</td>
-          <td class="col-highlight">31.4</td>
-          <td>43.6</td>
-          <td>55.7</td>
-          <td>60.6</td>
+          <td class="col-highlight">35.7</td>
+          <td>47.3</td>
+          <td>75.0</td>
+          <td>76.2</td>
           <td>18.9</td>
           <td>8.3</td>
           <td>2.3</td>
+        </tr>
+        <tr>
+          <td>GUI-Owl-1.5-8B</td>
+          <td class="col-highlight">34.4</td>
+          <td>43.3</td>
+          <td>78.6</td>
+          <td>79.5</td>
+          <td>28.3</td>
+          <td>10.4</td>
+          <td>2.7</td>
         </tr>
       </tbody>
     </table>
@@ -299,17 +299,17 @@
       <div class="finding-card" data-finding="0">
         <div class="finding-number">1</div>
         <h3>Same score, different behavior</h3>
-        <p>Agents at 31-33% success diverge in exploration vs. execution accuracy.</p>
+        <p>Agents at 34-37% success diverge in exploration vs. execution accuracy.</p>
       </div>
       <div class="finding-card" data-finding="1">
         <div class="finding-number">2</div>
         <h3>Skill-specific weaknesses</h3>
-        <p>Claude CUA leads OpenAI CUA by 29% on Accommodation filtering, yet trails by 14% on Job-Network commits.</p>
+        <p>Claude CUA leads OpenAI CUA by 30% on Accommodation filtering, yet trails by 14% on Job-Network commits.</p>
       </div>
       <div class="finding-card" data-finding="2">
         <div class="finding-number">3</div>
         <h3>Agent-specific decisive errors</h3>
-        <p>Claude CUA's wrong branches concentrate at inspection (69%); GUI-Owl uniquely diverges at filtering (29%).</p>
+        <p>Claude CUA's wrong branches concentrate at inspection (71%); GUI-Owl uniquely diverges at filtering (30%).</p>
       </div>
       <div class="finding-card" data-finding="3">
         <div class="finding-number">4</div>
@@ -323,17 +323,17 @@
         <table class="mini-table">
           <thead><tr><th>Agent</th><th class="mt-same">Terminal (%)</th><th class="mt-diff">Exploration (%)</th><th class="mt-diff">Execution (%)</th></tr></thead>
           <tbody>
-            <tr><td>UI-TARS-1.5-7B</td><td class="mt-same">32.6</td><td class="mt-diff">46.3</td><td class="mt-diff">50.6</td></tr>
-            <tr><td>GUI-Owl-1.5-8B</td><td class="mt-same">31.9</td><td class="mt-diff">43.6</td><td class="mt-diff">55.6</td></tr>
-            <tr><td>Fara-7B</td><td class="mt-same">31.4</td><td class="mt-diff">43.6</td><td class="mt-diff">55.7</td></tr>
+            <tr><td>UI-TARS-1.5-7B</td><td class="mt-same">37.1</td><td class="mt-diff">49.2</td><td class="mt-diff">73.9</td></tr>
+            <tr><td>Fara-7B</td><td class="mt-same">35.7</td><td class="mt-diff">47.3</td><td class="mt-diff">75.0</td></tr>
+            <tr><td>GUI-Owl-1.5-8B</td><td class="mt-same">34.4</td><td class="mt-diff">43.3</td><td class="mt-diff">78.6</td></tr>
           </tbody>
         </table>
         </div>
-        <p class="figure-caption">Three agents land within a point of each other on terminal success, yet differ visibly in exploration reach and execution accuracy: differences that only process metrics expose.</p>
+        <p class="figure-caption">Three agents land within three points of each other on terminal success, yet differ visibly in exploration reach and execution accuracy: differences that only process metrics expose.</p>
       </div>
       <div class="finding-detail-content" data-finding="1" style="display:none;">
         <img src="static/figures/fig_model_strengths_v2.png" alt="Skill-level strengths and weaknesses" class="figure-img" onerror="this.style.display='none';">
-        <p class="figure-caption">Agents exhibit distinct within-website skill profiles. e.g., Claude CUA leads OpenAI CUA by 29% on Accommodation filtering yet trails by 14% on Job-Network commits, showing that weakness can be concentrated in a specific interaction skill. Commit is task-relative: the final task-completing action of each task's oracle trajectory.</p>
+        <p class="figure-caption">Agents exhibit distinct within-website skill profiles. e.g., Claude CUA leads OpenAI CUA by 30% on Accommodation filtering yet trails by 14% on Job-Network commits, showing that weakness can be concentrated in a specific interaction skill. Commit is task-relative: the final task-completing action of each task's oracle trajectory.</p>
       </div>
       <div class="finding-detail-content" data-finding="2" style="display:none;">
         <img src="static/figures/fig_failure_attribution_v2.png" alt="Bifurcation analysis" class="figure-img" onerror="this.style.display='none';">
